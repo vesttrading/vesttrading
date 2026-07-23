@@ -1,71 +1,126 @@
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VestTrading</title>
-    <style>
-        body {
-            background-color: #050b14;
+}
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-green {
+            background-color: var(--primary-green);
+            color: #000000;
+            box-shadow: 0 4px 20px rgba(118, 224, 0, 0.3);
+        }
+        .btn-blue {
+            background-color: transparent;
             color: #ffffff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
-            margin: 0;
+            border: 2px solid var(--primary-blue);
+            box-shadow: 0 4px 20px rgba(50, 130, 246, 0.1);
         }
-        .brand {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 40px;
-        }
-        .brand span:nth-child(1) { color: #3282f6; } /* Синий для Vest */
-        .brand span:nth-child(2) { color: #76e000; } /* Зеленый для Trading */
-        
-        .services {
+
+        /* Сетка карточек */
+        .cards-grid {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 50px;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
         }
-        .service-item {
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            width: 180px;
+            text-align: left;
+            backdrop-filter: blur(8px);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .card:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-4px);
             background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 10px;
-            min-width: 150px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .service-item h3 {
-            margin: 0;
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .card h3 {
             font-size: 1.1rem;
-            letter-spacing: 1px;
+            margin: 0 0 10px 0;
+            font-weight: 600;
         }
-        .markets {
-            color: #76e000;
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
+        .card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 
-    <div class="brand">
-        <span>Vest</span><span>Trading</span>
+    <div class="bg-animation">
+        <div class="bg-chart-line"></div>
     </div>
 
-    <div class="services">
-        <div class="service-item"><h3>ANÁLISIS</h3></div>
-        <div class="service-item"><h3>EDUCACIÓN</h3></div>
-        <div class="service-item"><h3>ESTRATEGIA</h3></div>
-        <div class="service-item"><h3>SEÑALES</h3></div>
-        <div class="service-item"><h3>CONFIANZA</h3></div>
-    </div>
+    <header>
+        <div style="font-weight: bold; font-size: 1.3rem; letter-spacing: 0.5px;">
+            <span style="color:var(--primary-blue)">Vest</span><span style="color:var(--primary-green)">Trading</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Academy</a>
+            <a href="#">Forex</a>
+            <a href="#">Crypto</a>
+            <a href="#">AI Tools</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="lang-selector">
+            🌐 EN | ES | AR | FR | PT | RU
+        </div>
+    </header>
 
-    <div class="markets">
-        FOREX &bull; CRIPTOMONEDAS &bull; ACCIONES &bull; OPCIONES
-    </div>
+    <main class="hero">
+        <!-- Посадочное место под ваш логотип VT -->
+        <div class="hero-logo-placeholder">VT</div>
+        
+        <h1>Trade Smarter. Build Your Future.</h1>
+        <p>AI-powered education, market analysis and professional trading for Forex, Crypto and Global Markets.</p>
+        
+        <div class="btn-group">
+            <a href="#" class="btn btn-green">Start Learning</a>
+            <a href="#" class="btn btn-blue">Explore Markets</a>
+        </div>
+    </main>
+
+    <section class="cards-grid">
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>Market Analysis</h3>
+            <p>Ежедневный анализ рынков.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🎓</div>
+            <h3>Trading Academy</h3>
+            <p>Курсы от базового до продвинутого уровня.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🤖</div>
+            <h3>AI Assistant</h3>
+            <p>Помощник для анализа рынка и обучения.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">📈</div>
+            <h3>Trading Signals</h3>
+            <p>Торговые идеи и сигналы.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🌍</div>
+            <h3>Global Community</h3>
+            <p>Международное сообщество трейдеров.</p>
+        </div>
+    </section>
 
 </body>
+</html>
 </html>
