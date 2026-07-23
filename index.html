@@ -9,37 +9,57 @@
             --bg-color: #030712;
             --primary-blue: #3282f6;
             --primary-green: #76e000;
+            --primary-red: #ef4444;
             --text-muted: #9ca3af;
         }
         body {
-            background-color: #030712 !important;
-            color: #ffffff !important;
+            background-color: var(--bg-color);
+            color: #ffffff;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
         }
+
+        /* Анимированный фон с японскими свечами */
+        #candles-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.15; /* Легкая прозрачность, чтобы не мешать тексту */
+        }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background: #0b1329;
+            background: rgba(11, 19, 41, 0.8);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 10;
         }
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
             margin: 0 15px;
             font-size: 0.95rem;
+            transition: color 0.3s;
         }
         .nav-links a:hover { color: var(--primary-green); }
         .lang-selector { color: var(--text-muted); font-size: 0.85rem; }
+        
         .hero {
             max-width: 1000px;
             margin: 60px auto 40px auto;
             text-align: center;
             padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
         .hero-logo-placeholder {
             width: 120px;
@@ -57,17 +77,45 @@
         .hero h1 { font-size: 3.5rem; margin: 10px 0; font-weight: 800; color: #ffffff; }
         .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 20px auto 40px auto; }
         .btn-group { display: flex; justify-content: center; gap: 20px; margin-bottom: 80px; }
-        .btn { padding: 15px 35px; font-size: 1rem; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-block; }
-        .btn-green { background-color: var(--primary-green); color: #000000; }
+        .btn { padding: 15px 35px; font-size: 1rem; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-block; transition: transform 0.2s; }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-green { background-color: var(--primary-green); color: #000000; box-shadow: 0 4px 15px rgba(118,224,0,0.2); }
         .btn-blue { color: #ffffff; border: 2px solid var(--primary-blue); background: transparent; }
-        .cards-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto 60px auto; padding: 0 20px; }
-        .card { background: #111827; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 25px; width: 180px; text-align: left; }
+        
+        .cards-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .card {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            width: 180px;
+            text-align: left;
+            transition: border-color 0.3s, transform 0.3s;
+[23.07.2026 15:10] Vladimir: }
+        .card:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-4px);
+        }
         .card-icon { font-size: 1.8rem; margin-bottom: 15px; }
         .card h3 { font-size: 1.1rem; margin: 0 0 10px 0; color: #ffffff; }
         .card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
     </style>
 </head>
 <body>
+
+    <!-- Холст для анимированных свечей -->
+    <canvas id="candles-bg"></canvas>
 
     <header>
         <div style="font-weight: bold; font-size: 1.3rem;">
@@ -88,7 +136,8 @@
             <a href="#" class="btn btn-blue">Explore Markets</a>
         </div>
     </main>
-[23.07.2026 14:58] Vladimir: <section class="cards-grid">
+
+    <section class="cards-grid">
         <div class="card"><div class="card-icon">📊</div><h3>Market Analysis</h3><p>Ежедневный анализ рынков.</p></div>
         <div class="card"><div class="card-icon">🎓</div><h3>Trading Academy</h3><p>Курсы от базового до продвинутого уровня.</p></div>
         <div class="card"><div class="card-icon">🤖</div><h3>AI Assistant</h3><p>Помощник для анализа рынка и обучения.</p></div>
@@ -96,6 +145,62 @@
         <div class="card"><div class="card-icon">🌍</div><h3>Global Community</h3><p>Международное сообщество трейдеров.</p></div>
     </section>
 
+    <!-- Скрипт для анимации японских свечей -->
+    <script>
+        const canvas = document.getElementById('candles-bg');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const candles = [];
+        const candleCount = 25;
+
+        for (let i = 0; i < candleCount; i++) {
+            candles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                width: 10 + Math.random() * 15,
+                height: 40 + Math.random() * 80,
+                wickHeight: 20 + Math.random() * 40,
+                isBullish: Math.random() > 0.4,
+                speed: 0.2 + Math.random() * 0.4
+            });
+        }
+
+        function drawCandles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            candles.forEach(c => {
+                ctx.strokeStyle = c.isBullish ? '#76e000' : '#ef4444';
+                ctx.fillStyle = c.isBullish ? '#76e000' : '#ef4444';
+                ctx.lineWidth = 2;
+
+                // Рисуем фитиль (тень свечи)
+                ctx.beginPath();
+                ctx.moveTo(c.x + c.width / 2, c.y - c.wickHeight);
+                ctx.lineTo(c.x + c.width / 2, c.y + c.height + c.wickHeight);
+                ctx.stroke();
+
+                // Рисуем тело свечи
+                ctx.fillRect(c.x, c.y, c.width, c.height);
+
+                // Двигаем свечу влево
+                c.x -= c.speed;
+                if (c.x + c.width < 0) {
+                    c.x = canvas.width;
+                    c.y = Math.random() * canvas.height;
+                }
+            });
+
+            requestAnimationFrame(drawCandles);
+        }
+        drawCandles();
+    </script>
+
 </body>
 </html>
-       
