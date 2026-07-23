@@ -1,1 +1,71 @@
-Enter file contents here <h1>Сайт VestTrading работает!</h1>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VestTrading</title>
+    <style>
+        body {
+            background-color: #050b14;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+        }
+        .brand {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        .brand span:nth-child(1) { color: #3282f6; } /* Синий для Vest */
+        .brand span:nth-child(2) { color: #76e000; } /* Зеленый для Trading */
+        
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        .service-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 150px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .service-item h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .markets {
+            color: #76e000;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="brand">
+        <span>Vest</span><span>Trading</span>
+    </div>
+
+    <div class="services">
+        <div class="service-item"><h3>ANÁLISIS</h3></div>
+        <div class="service-item"><h3>EDUCACIÓN</h3></div>
+        <div class="service-item"><h3>ESTRATEGIA</h3></div>
+        <div class="service-item"><h3>SEÑALES</h3></div>
+        <div class="service-item"><h3>CONFIANZA</h3></div>
+    </div>
+
+    <div class="markets">
+        FOREX &bull; CRIPTOMONEDAS &bull; ACCIONES &bull; OPCIONES
+    </div>
+
+</body>
+</html>
