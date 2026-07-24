@@ -105,16 +105,37 @@
     </div>
 
     <script>
-        let currentMode = 'login';
+       let currentMode = 'login';
+        
         function switchTab(mode) {
             currentMode = mode;
+            
+            // Сбрасываем активный статус у всех вкладок
             document.querySelectorAll('.auth-tab').forEach(btn => btn.classList.remove('active'));
+            
+            // Активируем нужную вкладку и меняем текст главной кнопки
             if(mode === 'login') {
                 document.querySelectorAll('.auth-tab')[0].classList.add('active');
                 document.getElementById('mainAuthBtn').innerText = 'Login';
             } else {
                 document.querySelectorAll('.auth-tab')[1].classList.add('active');
                 document.getElementById('mainAuthBtn').innerText = 'Register Account';
+            }
+        }
+        
+        function handleAuth(e) {
+            e.preventDefault();
+            document.getElementById('authBox').style.display = 'none';
+            document.getElementById('dashboardBox').style.display = 'block';
+        }
+        
+        function logout() {
+            document.getElementById('dashboardBox').style.display = 'none';
+            document.getElementById('authBox').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
             }
         }
         function handleAuth(e) {
