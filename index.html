@@ -43,6 +43,13 @@
             position: relative;
             z-index: 10;
         }
+     .logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
@@ -51,7 +58,49 @@
             transition: color 0.3s;
         }
         .nav-links a:hover { color: var(--primary-green); }
-        .lang-selector { color: var(--text-muted); font-size: 0.85rem; }
+        .lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.lang-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+.lang-options {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: #0b1329;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    z-index: 100;
+}
+.lang-options a {
+    color: #9ca3af;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.85rem;
+    text-align: center;
+}
+.lang-options a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--primary-green);
+}
+.lang-dropdown:hover .lang-options {
+    display: block;
+}
         
         .hero {
             max-width: 1000px;
@@ -117,13 +166,24 @@
     <canvas id="candles-bg"></canvas>
 
     <header>
-        <div style="font-weight: bold; font-size: 1.3rem;">
-            <span style="color:var(--primary-blue)">Vest</span><span style="color:var(--primary-green)">Trading</span>
+        <div class="logo">
+            <span style="color:var(--primary-blue)">Vest</span><span style="color:#ffffff">Trading</span>
         </div>
+        
         <nav class="nav-links">
             <a href="#">Home</a> <a href="#">Academy</a> <a href="#">Forex</a> <a href="#">Crypto</a> <a href="#">AI Tools</a> <a href="#">Contact</a>
         </nav>
-        <div class="lang-selector">🌐 EN | ES | AR | FR | PT | RU</div>
+        <div class="lang-dropdown">
+                <button class="lang-btn">🌐 RU</button>
+                <div class="lang-options">
+                    <a href="?lang=en">EN</a>
+                    <a href="?lang=es">ES</a>
+                    <a href="?lang=ar" style="direction: rtl;">AR</a>
+                    <a href="?lang=fr">FR</a>
+                    <a href="?lang=pt">PT</a>
+                    <a href="?lang=ru">RU</a>
+                </div>
+            </div>
     </header>
 
     <main class="hero">
