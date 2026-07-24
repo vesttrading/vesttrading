@@ -176,14 +176,17 @@
         </nav>
         <div class="lang-dropdown">
                 <button class="lang-btn">🌐 RU</button>
-                <div class="lang-options">
-                    <a href="?lang=en">EN</a>
-                    <a href="?lang=es">ES</a>
-                    <a href="?lang=ar" style="direction: rtl;">AR</a>
-                    <a href="?lang=fr">FR</a>
-                    <a href="?lang=pt">PT</a>
-                    <a href="?lang=ru">RU</a>
-                </div>
+             
+              <div class="lang-options">
+                <a href="#" onclick="changeLanguage('en'); return false;"><img src="https://flagcdn.com" style="vertical-align: middle; margin-right: 5px;"> EN</a>
+                <a href="#" onclick="changeLanguage('es'); return false;"><img src="https://flagcdn.com" style="vertical-align: middle; margin-right: 5px;"> ES</a>
+                <a href="#" onclick="changeLanguage('ar'); return false;"><img src="https://flagcdn.com" style="vertical-align: middle; margin-right: 5px;"> AR</a>
+                <a href="#" onclick="changeLanguage('fr'); return false;"><img src="https://flagcdn.com" style="vertical-align: middle; margin-right: 5px;"> FR</a>
+                <a href="#" onclick="changeLanguage('pt'); return false;"><img src="https://flagcdn.com" style="vertical-align: middle; margin-right: 5px;"> PT</a>
+                <a href="#" onclick="changeLanguage('ru'); return false;"><img src="https://flagcdn.com" style="vertical-align: middle; margin-right: 5px;"> RU</a>
+           
+            </div>
+            </div>
             </div>
     </header>
 
@@ -375,6 +378,58 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         drawCandles();
     </script>
+ <script>
+const translations = {
+    en: {
+        "hero-title": "Trade Smarter. Build Your Future.",
+        "hero-subtitle": "AI-powered education, market analysis and professional trading for Forex, Crypto and Stocks.",
+        "card1-title": "Market Analysis", "card1-desc": "Daily analysis of financial markets.",
+        "card2-title": "Trading Academy", "card2-desc": "Courses from basic to advanced levels.",
+        "card3-title": "AI Assistant", "card3-desc": "Assistant for market analysis and learning.",
+        "card4-title": "Trading Signals", "card4-desc": "Trading ideas and real-time signals.",
+        "card5-title": "Global Community", "card5-desc": "International community of traders."
+    },
+    ru: {
+        "hero-title": "Торгуйте умнее. Стройте свое будущее.",
+        "hero-subtitle": "AI-powered образование, анализ рынка и professional трейдинг для Forex, Crypto и акций.",
+        "card1-title": "Анализ рынка", "card1-desc": "Ежедневный анализ рынков.",
+        "card2-title": "Академия трейдинга", "card2-desc": "Курсы от базового до продвинутого уровня.",
+        "card3-title": "AI Ассистент", "card3-desc": "Помощник для анализа рынка и обучения.",
+        "card4-title": "Торговые сигналы", "card4-desc": "Торговые идеи и сигналы.",
+        "card5-title": "Мировое сообщество", "card5-desc": "Международное сообщество трейдеров."
+    },
+    pt: {
+        "hero-title": "Opere com mais inteligência. Construa seu futuro.",
+        "hero-subtitle": "Educação baseada em IA, análise de mercado e trading profissional para Forex, Crypto e Ações.",
+        "card1-title": "Análise de Mercado", "card1-desc": "Análise diária dos mercados financeiros.",
+        "card2-title": "Academia de Trading", "card2-desc": "Cursos do nível básico ao avançado.",
+        "card3-title": "Assistente de IA", "card3-desc": "Auxiliar para análise de mercado e aprendizado.",
+        "card4-title": "Sinais de Trading", "card4-desc": "Ideias de negociação e sinais em tempo real.",
+        "card5-title": "Comunidade Global", "card5-desc": "Comunidade internacional de traders."
+    }
+};
+
+function changeLanguage(lang) {
+    localStorage.setItem('selectedLanguage', lang);
+    
+    document.querySelectorAll('[data-lang]').forEach(element => {
+        const key = element.getAttribute('data-lang');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+
+    const langBtn = document.querySelector('.lang-btn');
+    if (langBtn) langBtn.innerHTML = 🌐 ${lang.toUpperCase()};
+
+    document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
+    changeLanguage(savedLang);
+});
+</script>
 
 </body>
 </html>
