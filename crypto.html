@@ -121,27 +121,24 @@
     <div class="container">
         <h1>Cryptocurrency Markets</h1>
         <p style="color: var(--text-muted); font-size: 1.1rem;">Digital asset tracking, market analytics, and Web3 trends.</p>
-       <div style="height: 500px; width: 100%; margin: 30px 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-            <iframe src="https://tradingview.com" 
-                    style="width: 100%; height: 100%; border: none; margin: 0; padding: 0;">
-            </iframe>
-        </div>
-            <script type="text/javascript" src="https://tradingview.com"></script>
-            <script type="text/javascript">
-            new TradingView.widget({
+       <div style="height:220px; width:100%; max-width: 450px; margin: 30px auto; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #131722;">
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://tradingview.com" async>
+                {
+                "symbol": "BINANCE:BTCUSDT",
                 "width": "100%",
                 "height": "100%",
-                "symbol": "BINANCE:BTCUSDT",
-                "interval": "D",
-                "timezone": "Etc/UTC",
-                "theme": "dark",
-                "style": "1",
                 "locale": "en",
-                "toolbar_bg": "#f1f3f6",
-                "enable_publishing": false,
-                "hide_side_toolbar": false,
-                "allow_symbol_change": true,
-                "container_id": "tradingview_crypto"
+                "dateRange": "12M",
+                "colorTheme": "dark",
+                "isTransparent": true,
+                "autosize": true,
+                "largeChartUrl": ""
+                }
+                </script>
+            </div>
+        </div>
             });
             </script>
         </div>
