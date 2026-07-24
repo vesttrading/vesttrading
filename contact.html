@@ -129,18 +129,19 @@
         <h1>Get in Touch</h1>
         <p style="color: var(--text-muted); font-size: 1.1rem;">Have questions about our AI models or platform features? Drop us a line.</p>
         
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+        <form class="contact-form" action="https://web3forms.com" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" required placeholder="Your name">
+                <input type="text" name="name" required placeholder="Your name">
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" required placeholder="your@email.com">
+               <input type="email" name="email" required placeholder="your@email.com">
             </div>
             <div class="form-group">
                 <label>Message</label>
-                <textarea rows="5" required placeholder="How can we help you?"></textarea>
+                <textarea name="message" rows="5" required placeholder="How can we help you?"></textarea>
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
