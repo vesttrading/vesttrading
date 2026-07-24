@@ -112,6 +112,27 @@
     <div class="container">
         <h1>Forex Markets</h1>
         <p style="color: var(--text-muted); font-size: 1.1rem;">Analytics, trading instruments and strategies for major currency pairs.</p>
+     <div style="height: 500px; width: 100%; margin: 30px 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+            <div id="tradingview_forex"></div>
+            <script type="text/javascript" src="https://tradingview.com"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+                "width": "100%",
+                "height": "100%",
+                "symbol": "FX:EURUSD",
+                "interval": "D",
+                "timezone": "Etc/UTC",
+                "theme": "dark",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "hide_side_toolbar": false,
+                "allow_symbol_change": true,
+                "container_id": "tradingview_forex"
+            });
+            </script>
+        </div>
         
         <div class="forex-grid">
             <div class="forex-card">
