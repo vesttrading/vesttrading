@@ -100,6 +100,12 @@
             font-size: 0.9rem;
             margin-bottom: 15px;
         }
+        .pair-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
     </style>
 </head>
 <body>
@@ -169,6 +175,34 @@
         </div>
         <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">&copy; 2026 VestTrading. All rights reserved.</p>
     </footer>
+<script>
+function updateCryptoPrices() {
+    const pairs = [
+        { id: 'price-btc', base: 64250.00, decimals: 2, Vol: 150 },
+        { id: 'price-eth', base: 3450.00, decimals: 2, Vol: 10 },
+        { id: 'price-sol', base: 145.20, decimals: 2, Vol: 0.5 }
+    ];
 
+    pairs.forEach(pair => {
+        const el = document.getElementById(pair.id);
+        if (!el) return;
+
+        let currentPrice = parseFloat(el.textContent) || pair.base;
+        const change = (Math.random() - 0.5) * pair.Vol; 
+        const newPrice = currentPrice + change;
+
+        if (newPrice > currentPrice) {
+            el.style.color = '#76e000';
+        } else if (newPrice < currentPrice) {
+            el.style.color = '#ef4444';
+        }
+
+        el.textContent = newPrice.toFixed(pair.decimals);
+
+        setTimeout(() => { el.style.color = ''; }, 800);
+    });
+}
+setInterval(updateCryptoPrices, 2000);
+</script>
 </body>
 </html>
