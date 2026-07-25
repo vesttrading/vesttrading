@@ -318,64 +318,63 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
     changeLanguage(savedLang);
     document.querySelector('.lang-btn').innerHTML = 🌐 ${savedLang.toUpperCase()};
-});
-</script>
+});<script>
+const canvas = document.getElementById('candles-bg');
+const ctx = canvas.getContext('2d');
 
-    <!-- Скрипт для анимации японских свечей -->
-    <script>
-        const canvas = document.getElementById('candles-bg');
-        const ctx = canvas.getContext('2d');
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+const candles = [];
+const candleCount = 25;
 
-        const candles = [];
-        const candleCount = 25;
+for (let i = 0; i < candleCount; i++) {
+    candles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        width: 10 + Math.random() * 15,
+        height: 40 + Math.random() * 80,
+        wickHeight: 20 + Math.random() * 40,
+        isBullish: Math.random() > 0.4,
+        speed: 0.2 + Math.random() * 0.4
+    });
+}
 
-        for (let i = 0; i < candleCount; i++) {
-            candles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                width: 10 + Math.random() * 15,
-                height: 40 + Math.random() * 80,
-                wickHeight: 20 + Math.random() * 40,
-                isBullish: Math.random() > 0.4,
-                speed: 0.2 + Math.random() * 0.4
-            });
-        }
-
-       function drawCandles() {
-    // Очищаем canvas и заливаем темным фоном
+function drawCandles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = '#030712';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
+
     candles.forEach(c => {
-        // Устанавливаем цвета в зависимости от направления свечи
         const color = c.isBullish ? '#76e000' : '#ef4444';
         ctx.strokeStyle = color;
         ctx.fillStyle = color;
         ctx.lineWidth = 2;
 
-        // 1. Рисуем фитиль (вертикальную линию)
         ctx.beginPath();
         ctx.moveTo(c.x + c.width / 2, c.y - c.wickHeight / 2);
         ctx.lineTo(c.x + c.width / 2, c.y + c.height + c.wickHeight / 2);
         ctx.stroke();
 
-        // 2. Рисуем тело свечи (прямоугольник)
         ctx.fillRect(c.x, c.y, c.width, c.height);
+
+        c.x -= c.speed;
+        if (c.x + c.width < 0) {
+            c.x = canvas.width;
+            c.y = Math.random() * canvas.height;
+        }
     });
+
+    requestAnimationFrame(drawCandles);
 }
 
-            requestAnimationFrame(drawCandles);
-        }
-        drawCandles();
-    </script>
+drawCandles();
+</script>
+
  <script>
 const translations = {
     en: {
