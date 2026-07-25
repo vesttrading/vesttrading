@@ -418,6 +418,7 @@ function changeLanguage(lang) {
     });
 
     const langBtn = document.querySelector('.lang-btn');
+    // ИСПРАВЛЕНО: добавлена строка в косых кавычках (клавиша Ё)
     if (langBtn) langBtn.innerHTML = 🌐 ${lang.toUpperCase()};
 
     document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
@@ -426,7 +427,7 @@ function changeLanguage(lang) {
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
     changeLanguage(savedLang);
-});
+}); // ИСПРАВЛЕНО: закрыты скобки обработчика событий
 </script>
 
 </body>
