@@ -162,6 +162,22 @@
         .card h3 { font-size: 1.1rem; margin: 0 0 10px 0; color: #ffffff; }
         .card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
         .logo { background: var(--juicy-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; font-size: 1.5rem; display: inline-block; }
+         .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo span {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
     </style>
 </head>
 <link rel="stylesheet" href="https://cloudflare.com">
@@ -171,8 +187,9 @@
     <canvas id="candles-bg"></canvas>
 
  <header>  
-        <div class="logo">
-    <img src="logo.png" alt="VestTrading Logo">
+       <div class="logo">
+    <img src="logo.png" alt="VestTrading">
+    <span>VestTrading</span>
  </div>
        
         
