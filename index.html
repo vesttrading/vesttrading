@@ -345,36 +345,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 wickHeight: 20 + Math.random() * 40,
                 isBullish: Math.random() > 0.4,
                 speed: 0.2 + Math.random() * 0.4
-            });
+            
         }
 
-        function drawCandles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-         ctx.fillStyle = '#030712'; ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            candles.forEach(c => {
-                ctx.strokeStyle = c.isBullish ? '#76e000' : '#ef4444';
-                ctx.fillStyle = c.isBullish ? '#76e000' : '#ef4444';
-                ctx.lineWidth = 2;
+       function drawCandles() {
+    // Очищаем canvas и заливаем темным фоном
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#030712';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    candles.forEach(c => {
+        // Устанавливаем цвета в зависимости от направления свечи
+        const color = c.isBullish ? '#76e000' : '#ef4444';
+        ctx.strokeStyle = color;
+        ctx.fillStyle = color;
+        ctx.lineWidth = 2;
 
-                // Рисуем фитиль (тень свечи)
-                ctx.beginPath();
-                ctx.moveTo(c.x + c.width / 2, c.y - c.wickHeight);
-                ctx.lineTo(c.x + c.width / 2, c.y + c.height + c.wickHeight);
-                ctx.stroke();
+        // 1. Рисуем фитиль (вертикальную линию)
+        ctx.beginPath();
+        ctx.moveTo(c.x + c.width / 2, c.y - c.wickHeight / 2);
+        ctx.lineTo(c.x + c.width / 2, c.y + c.height + c.wickHeight / 2);
+        ctx.stroke();
 
-                // Рисуем тело свечи
-                ctx.fillRect(c.x, c.y, c.width, c.height);
+        // 2. Рисуем тело свечи (прямоугольник)
+        ctx.fillRect(c.x, c.y, c.width, c.height);
+    });
+}
 
-                // Двигаем свечу влево
-                c.x -= c.speed;
-                if (c.x + c.width < 0) {
-                    c.x = canvas.width;
-                    c.y = Math.random() * canvas.height;
-                }
-            });
-
-            requestAnimationFrame(drawCandles);
+            requestAnimationFrame(drawCandles});
         }
         drawCandles();
     </script>
