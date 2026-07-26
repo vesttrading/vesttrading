@@ -76,30 +76,49 @@
 .lang-btn:hover {
     background: rgba(255, 255, 255, 0.15);
 }
-  
-.lang-options {.hero-buttons *:first-child, .btn-primary, .primary-btn {
+  /* Левая кнопка (Academy) */
+.hero-buttons a:first-child, 
+.hero-buttons button:first-child,
+.btn-primary {
     background: linear-gradient(135deg, #00f0ff, #7209b7) !important;
     color: #ffffff !important;
     box-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 35px rgba(114, 9, 183, 0.4) !important;
     border: none !important;
     transition: all 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
-.hero-buttons *:first-child:hover, .btn-primary:hover, .primary-btn:hover {
+
+.hero-buttons a:first-child:hover, 
+.hero-buttons button:first-child:hover,
+.btn-primary:hover {
     box-shadow: 0 0 30px #00f0ff, 0 0 50px #7209b7 !important;
     transform: translateY(-2px) !important;
 }
-.hero-buttons *:last-child, .btn-secondary, .secondary-btn {
+
+/* Правая кнопка (AI Assistant) */
+.hero-buttons a:last-child, 
+.hero-buttons button:last-child,
+.btn-secondary {
     background: transparent !important;
     color: #ffffff !important;
     box-shadow: 0 0 15px rgba(0, 240, 255, 0.4) !important;
     border: 1px solid #00f0ff !important;
     transition: all 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
-.hero-buttons *:last-child:hover, .btn-secondary:hover, .secondary-btn:hover {
+
+.hero-buttons a:last-child:hover, 
+.hero-buttons button:last-child:hover,
+.btn-secondary:hover {
     box-shadow: 0 0 30px #00f0ff !important;
     border-color: #00f0ff !important;
     transform: translateY(-2px) !important;
 }
+
     display: none;
     position: absolute;
     right: 0;
