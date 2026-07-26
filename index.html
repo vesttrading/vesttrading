@@ -165,15 +165,17 @@
     display: flex;
     align-items: center;
     gap: 12px;
-}
-.logo img {
-    height: 50px !important;
+}.logo img {
+    height: 45px !important;
     width: auto !important;
     max-height: none !important;
-    transform: scale(2.5);
-    transform-origin: left center;
-    margin-top: -5px;
+    transform: none !important;
+    margin: 0 !important;
+    
+    /* Делаем цвета сочными */
+    filter: saturate(2) contrast(1.2) drop-shadow(0 0 8px rgba(0, 168, 255, 0.6)) !important;
 }
+
 .logo-icon {
     width: 52px;
     height: 52px;
