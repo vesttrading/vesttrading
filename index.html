@@ -76,30 +76,14 @@
 .lang-btn:hover {
     background: rgba(255, 255, 255, 0.15);
 }
-  /* Левая кнопка (Academy) */
-.hero-buttons a:first-child, 
-.hero-buttons button:first-child,
-.btn-primary {
-    background: linear-gradient(135deg, #00f0ff, #7209b7) !important;
-    color: #ffffff !important;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 35px rgba(114, 9, 183, 0.4) !important;
-    border: none !important;
-    transition: all 0.3s ease !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+.hero-btn, .btn, .button, [class*="btn"] {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
-
-.hero-buttons a:first-child:hover, 
-.hero-buttons button:first-child:hover,
-.btn-primary:hover {
-    box-shadow: 0 0 30px #00f0ff, 0 0 50px #7209b7 !important;
+.hero-btn:hover, .btn:hover, .button:hover, [class*="btn"]:hover {
+    box-shadow: 0 0 25px #00a8ff !important;
     transform: translateY(-2px) !important;
 }
-
-/* Правая кнопка (AI Assistant) */
-.hero-buttons a:last-child, 
-.hero-buttons button:last-child,
 .btn-secondary {
     background: transparent !important;
     color: #ffffff !important;
