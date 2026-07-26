@@ -230,31 +230,29 @@
     <!-- Холст для анимированных свечей -->
     <canvas id="candles-bg"></canvas>
 
- </div><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VestTrading</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header>
-  <div class="logo-container">
-    <img src="images/logo.png" alt="VestTrading Logo" class="site-logo">
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="academy.html">Academia</a></li>
-      <li><a href="ai-tools.html">AI Assistant</a></li>
-      <li><a href="forex.html">Forex</a></li>
-      <li><a href="crypto.html">Crypto</a></li>
-      <li><a href="profile.html">Perfil</a></li>
-    </ul>
-  </nav>
-</header>
 
+<header style="display:flex; justify-content:space-between; align-items:center; width:100%; padding:15px 4%; box-sizing:border-box; position:fixed; top:0; left:0; z-index:1000; background:#000;">
+    <div class="logo">
+        <img src="logo.png" alt="VestTrading Logo" style="height:60px;">
+    </div>
+    <nav class="nav-links" style="display:flex; align-items:center; gap:20px;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="academy.html" class="nav-link">Academy</a>
+        <a href="forex.html" class="nav-link">Forex</a>
+        <a href="crypto.html" class="nav-link">Crypto</a>
+    </nav>
+    <div class="lang-dropdown" style="display:inline-block;">
+        <button class="lang-btn" style="display:flex; align-items:center; gap:5px;">🌐 RU</button>
+        <div class="lang-options" style="display:flex; flex-direction:column; align-items:flex-start; gap:6px;">
+            <a href="#" onclick="changeLanguage('en'); return false;"><span class="lang-option">US</span></a>
+            <a href="#" onclick="changeLanguage('es'); return false;"><span class="lang-option">ES</span></a>
+            <a href="#" onclick="changeLanguage('ar'); return false;"><span class="lang-option">AE</span></a>
+            <a href="#" onclick="changeLanguage('fr'); return false;"><span class="lang-option">FR</span></a>
+            <a href="index-pt.html"><span class="lang-option">PT</span></a>
+            <a href="#" onclick="changeLanguage('ru'); return false;"><span class="lang-option">RU</span></a>
+        </div>
+    </div>
+</header>
 
 <main style="margin-top:100px; padding:20px;">
   <h1>Bienvenido a VestTrading</h1>
