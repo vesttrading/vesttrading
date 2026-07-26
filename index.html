@@ -230,7 +230,9 @@
     <!-- Холст для анимированных свечей -->
     <canvas id="candles-bg"></canvas>
 
-<!DOCTYPE html>
+
+
+            </div><!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -240,29 +242,19 @@
 </head>
 <body>
 
-<header style="display:flex; justify-content:space-between; align-items:center; width:100%; padding:15px 4%; box-sizing:border-box; position:fixed; top:0; left:0; z-index:1000; background:#000;">
-    <div class="logo">
-        <img src="logo.png" alt="VestTrading Logo" style="height:60px;">
-    </div>
-    <nav class="nav-links" style="display:flex; align-items:center; gap:20px;">
-        <a href="index.html" class="nav-link">Inicio</a>
-        <a href="academy.html" class="nav-link">Academia</a>
-        <a href="ai-tools.html" class="nav-link">AI Assistant</a>
-        <a href="forex.html" class="nav-link">Forex</a>
-        <a href="crypto.html" class="nav-link">Crypto</a>
-        <a href="profile.html" class="nav-link">Perfil</a>
-    </nav>
-    <div class="lang-dropdown" style="display:inline-block;">
-        <button class="lang-btn" style="display:flex; align-items:center; gap:5px;">🌐 ES</button>
-        <div class="lang-options" style="display:flex; flex-direction:column; align-items:flex-start; gap:6px;">
-            <a href="#" onclick="changeLanguage('en'); return false;"><span class="lang-option">US</span></a>
-            <a href="#" onclick="changeLanguage('es'); return false;"><span class="lang-option">ES</span></a>
-            <a href="#" onclick="changeLanguage('ar'); return false;"><span class="lang-option">AE</span></a>
-            <a href="#" onclick="changeLanguage('fr'); return false;"><span class="lang-option">FR</span></a>
-            <a href="index-pt.html"><span class="lang-option">PT</span></a>
-            <a href="#" onclick="changeLanguage('ru'); return false;"><span class="lang-option">RU</span></a>
-        </div>
-    </div>
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="VestTrading Logo" class="site-logo">
+  </div>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="academy.html" class="nav-link">Academia</a>
+    <a href="ai-tools.html" class="nav-link">AI Assistant</a>
+    <a href="forex.html" class="nav-link">Forex</a>
+    <a href="crypto.html" class="nav-link">Crypto</a>
+    <a href="profile.html" class="nav-link">Perfil</a>
+  </nav>
+  <button class="menu-toggle">☰</button>
 </header>
 
 <main style="margin-top:100px; padding:20px;">
@@ -270,10 +262,17 @@
   <p>Tradea más inteligente. Construye tu futuro.</p>
 </main>
 
+<script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
 
-            </div>
             </div>
     </header>
 
