@@ -234,10 +234,7 @@
 
 
 <main style="margin-top:100px; padding:20px;">
-  <h1>Bienvenido a VestTrading</h1><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
+ 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VestTrading</title>
   <link rel="stylesheet" href="styles.css">
@@ -340,54 +337,8 @@
     </div>
     <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">&copy; 2026 VestTrading. All rights reserved.</p>
 </footer>
- <script>
-const translations = {
-    en: {
-        "hero-title": "Trade Smarter. Build Your Future",
-        "hero-subtitle": "Empower your trading with next-generation AI analytics and professional education."
-    },
-    ru: {
-        "hero-title": "Торгуйте умнее. Стройте свое будущее",
-        "hero-subtitle": "Повышайте эффективность торговли с помощью AI-аналитики нового поколения и профессионального обучения."
-     ,
-       "card1-title": "Анализ рынка",
-        "card1-desc": "Ежедневный анализ рынков.",
-        "card2-title": "Академия трейдинга",
-        "card2-desc": "Курсы от базового до продвинутого уровня.",
-        "card3-title": "AI Ассистент",
-        "card3-desc": "Помощник для анализа рынка и обучения.",
-        "card4-title": "Торговые сигналы",
-        "card4-desc": "Торговые идеи и сигналы.",
-        "card5-title": "Мировое сообщество",
-        "card5-desc": "Международное сообщество трейдеров."
-    },
-    es: {
-        "hero-title": "Opere con más inteligencia. Construya su futuro",
-        "hero-subtitle": "Potencie su trading con analítica de IA de última generación y educación profesional."
-    },
-    fr: {
-        "hero-title": "Tradez plus intelligemment. Construisez votre avenir",
-        "hero-subtitle": "Boostez votre trading grâce à l'analyse IA de nouvelle génération et à une formation professionnelle."
-    },
-    pt: {
-        "hero-title": "Opere com mais inteligência. Construa seu futuro",
-        "hero-subtitle": "Potencialize seu trading com análises de IA de última geração e educação profissional.",
-        "card1-title": "Análise de Mercado",
-        "card1-desc": "Análise diária dos mercados financeiros.",
-        "card2-title": "Academia de Trading",
-        "card2-desc": "Cursos do nível básico ao avançado.",
-        "card3-title": "Assistente de IA",
-        "card3-desc": "Auxiliar para análise de mercado e aprendizado.",
-        "card4-title": "Sinais de Trading",
-        "card4-desc": "Ideias de negociação e sinais em tempo real.",
-        "card5-title": "Comunidade Global",
-        "card5-desc": "Comunidade internacional de traders."
-    },
-    ar: {
-        "hero-title": "تداول بذكاء. ابْنِ مستقبلك",
-        "hero-subtitle": "عزز تداولك بذكاء اصطناعي من الجيل القادم والتعليم المهني."
-    }
-};
+
+
 
 function changeLanguage(lang) {
     localStorage.setItem('selectedLanguage', lang);
@@ -406,21 +357,7 @@ function changeLanguage(lang) {
     }
 }
 
-document.querySelectorAll('.lang-options a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const urlParams = new URLSearchParams(link.getAttribute('href').split('?'));
-        const lang = urlParams.get('lang');
-        changeLanguage(lang);
-        document.querySelector('.lang-btn').innerHTML = 🌐 ${lang.toUpperCase()};
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
-    changeLanguage(savedLang);
-    document.querySelector('.lang-btn').innerHTML = 🌐 ${savedLang.toUpperCase()};
-});<script>
+document.addEventListener('DOMContentLoaded', () => { changeLanguage(localStorage.getItem('selectedLanguage') || 'ru'); });
 const canvas = document.getElementById('candles-bg');
 const ctx = canvas.getContext('2d');
 
@@ -474,12 +411,10 @@ function drawCandles() {
     requestAnimationFrame(drawCandles);
 }
  drawCandles();
- </script>
- </body>
- </html>
+
  
- <script>
-const translations = {
+
+  const translations = {
     en: {
         "hero-title": "Trade Smarter. Build Your Future.",
         "hero-subtitle": "AI-powered education, market analysis and professional trading for Forex, Crypto and Stocks.",
