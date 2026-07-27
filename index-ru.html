@@ -385,8 +385,7 @@ const translations = {
         "card4-desc": "Ideas de trading y señales en tiempo real."
     }
 };
-    }
-};
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -446,7 +445,7 @@ function drawCandles() {
 
  
 
-  const translations = {
+ 
     en: {
         "hero-title": "Trade Smarter. Build Your Future.",
         "hero-subtitle": "AI-powered education, market analysis and professional trading for Forex, Crypto and Stocks.",
@@ -488,7 +487,7 @@ function changeLanguage(lang) {
 
     const langBtn = document.querySelector('.lang-btn');
     // ИСПРАВЛЕНО: добавлена строка в косых кавычках (клавиша Ё)
-    if (langBtn) langBtn.innerHTML = 🌐 ${lang.toUpperCase()};
+    if (langBtn) langBtn.innerHTML = `🌐 ${lang.toUpperCase()}`;
 
     document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
 }
