@@ -328,7 +328,38 @@
 </footer>
 
 
-
+const translations = {
+    en: {
+        "hero-title": "Welcome to VestTrading",
+        "hero-subtitle": "Trade smarter. Build your future.",
+        "nav-home": "Home",
+        "nav-academy": "Academy",
+        "nav-ai": "AI Assistant",
+        "nav-forex": "Forex",
+        "card1-title": "Market Analysis",
+        "card1-desc": "Daily analysis of major markets."
+    },
+    ru: {
+        "hero-title": "Добро пожаловать в VestTrading",
+        "hero-subtitle": "Торгуйте умнее. Стройте свое будущее.",
+        "nav-home": "Главная",
+        "nav-academy": "Академия",
+        "nav-ai": "ИИ Ассистент",
+        "nav-forex": "Форекс",
+        "card1-title": "Анализ рынка",
+        "card1-desc": "Ежедневный анализ основных рынков."
+    },
+    es: {
+        "hero-title": "Bienvenido a VestTrading",
+        "hero-subtitle": "Tradea más inteligente. Construye tu futuro.",
+        "nav-home": "Inicio",
+        "nav-academy": "Academia",
+        "nav-ai": "AI Assistant",
+        "nav-forex": "Forex",
+        "card1-title": "Market Analysis",
+        "card1-desc": "Análisis diario de los mercados."
+    }
+};
 function changeLanguage(lang) {
     localStorage.setItem('selectedLanguage', lang);
     
@@ -338,7 +369,7 @@ function changeLanguage(lang) {
             element.textContent = translations[lang][key];
         }
     
-<script>
+
     if (lang === 'ar') {
         document.body.style.direction = 'rtl';
     } else {
