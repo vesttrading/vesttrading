@@ -387,24 +387,9 @@ const translations = {
 };
     }
 };
-function changeLanguage(lang) {
-    localStorage.setItem('selectedLanguage', lang);
-    
-    document.querySelectorAll('[data-lang]').forEach(element => {
-        const key = element.getAttribute('data-lang');
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    
 
-    if (lang === 'ar') {
-        document.body.style.direction = 'rtl';
-    } else {
-        document.body.style.direction = 'ltr';
-    }
-}
 
-document.addEventListener('DOMContentLoaded', () => { changeLanguage(localStorage.getItem('selectedLanguage') || 'ru'); });
+document.addEventListener('DOMContentLoaded', () => {
 const canvas = document.getElementById('candles-bg');
 const ctx = canvas.getContext('2d');
 
