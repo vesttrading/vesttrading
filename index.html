@@ -210,8 +210,12 @@
 </head>
 <body>
 
-<header style="display:flex; justify-content:space-between; align-items:center; width:100%; box-sizing:border-box; padding:10px 20px; background-color:#020813;">
+<header style="display:flex; justify-content:space-between; align-items:center; width:100%; box-sizing:border-box; padding:10px 20px; background-color:#020813; position:fixed; top:0; left:0; z-index:1000;">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
         .lang-dropdown:hover .lang-options {
             display: flex !important;
         }
