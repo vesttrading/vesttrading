@@ -334,27 +334,29 @@
         </a>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center; gap: 20px; width: 100%; padding: 0 20px; box-sizing: border-box;">
-        
-        <div class="card" style="flex: 1; min-width: 220px; background-color: #0b132b; border: 1px solid #3f3f46; border-radius: 8px; padding: 20px; text-align: left;">
-            <div class="card-icon">📊</div>
-            <h3 data-lang="card1-title" style="color:#ffffff; margin: 10px 0;">Market Analysis</h3>
-            <p data-lang="card1-desc" style="color:#a0aec0; margin:0;">Ежедневный анализ рынков.</p>
-        </div>
-
-        <div class="card" style="flex: 1; min-width: 220px; background-color: #0b132b; border: 1px solid #3f3f46; border-radius: 8px; padding: 20px; text-align: left;">
-            <div class="card-icon">🎓</div>
-            <h3 data-lang="card2-title" style="color:#ffffff; margin: 10px 0;">Trading Academy</h3>
-            <p data-lang="card2-desc" style="color:#a0aec0; margin:0;">Курсы от базового до продвинутого.</p>
-        </div>
-
-        <div class="card" style="flex: 1; min-width: 220px; background-color: #0b132b; border: 1px solid #3f3f46; border-radius: 8px; padding: 20px; text-align: left;">
-            <div class="card-icon">🤖</div>
-            <h3 data-lang="card3-title" style="color:#ffffff; margin: 10px 0;">AI Assistant</h3>
-            <p data-lang="card3-desc" style="color:#a0aec0; margin:0;">Помощник для анализа рынка.</p>
-        </div>
-
+   <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; padding: 0 20px; box-sizing: border-box;">
+    
+    <!-- Карточка 1 (Свечение при наведении) -->
+    <div class="card" style="flex: 1; min-width: 220px; background-color: #0b132b; border: 1px solid #3f3f46; border-radius: 8px; padding: 20px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3);" onmouseover="this.style.borderColor='#00ffcc'; this.style.boxShadow='0 0 20px rgba(0, 255, 204, 0.4)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='#3f3f46'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.3)'; this.style.transform='translateY(0)'">
+        <div class="card-icon">📊</div>
+        <h3 data-lang="card1-title" style="color:#ffffff; margin: 10px 0;">Market Analysis</h3>
+        <p data-lang="card1-desc" style="color:#a0aec0; margin:0;">Ежедневный анализ рынков.</p>
     </div>
+
+   <!-- Карточка 2 (Синее свечение при наведении) -->
+    <div class="card" style="flex:1; min-width:220px; background-color:#0b132b; border:1px solid #3f3f46; border-radius:8px; padding:20px; text-align:left; transition:all 0.3s ease;" onmouseover="this.style.borderColor='#0055ff'; this.style.boxShadow='0 0 20px rgba(0, 85, 255, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#3f3f46'; this.style.boxShadow='none'; this.style.transform='translateY(0)';">
+        <div class="card-icon">🎓</div>
+        <h3 data-lang="card2-title" style="color:#ffffff; margin:10px 0;">Trading Academy</h3>
+        <p data-lang="card2-desc" style="color:#a0aec0; margin:0;">Курсы от базового до продвинутого.</p>
+    </div>
+
+    <!-- Карточка 3 (Бирюзовое свечение при наведении) -->
+    <div class="card" style="flex:1; min-width:220px; background-color:#0b132b; border:1px solid #3f3f46; border-radius:8px; padding:20px; text-align:left; transition:all 0.3s ease;" onmouseover="this.style.borderColor='#00ffcc'; this.style.boxShadow='0 0 20px rgba(0, 255, 204, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#3f3f46'; this.style.boxShadow='none'; this.style.transform='translateY(0)';">
+        <div class="card-icon">🤖</div>
+        <h3 data-lang="card3-title" style="color:#ffffff; margin:10px 0;">AI Assistant</h3>
+        <p data-lang="card3-desc" style="color:#a0aec0; margin:0;">Помощник для анализа рынка.</p>
+    </div>
+</div>
 
 </main>
 </center>
