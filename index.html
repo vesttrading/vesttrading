@@ -219,17 +219,24 @@
             transition: all 0.2s ease-in-out;
             display: inline-block;
         }
+      /* Эффект яркого свечения внутри букв */
+        .nav-link {
+            transition: all 0.25s ease-in-out;
+            display: inline-block;
+            font-weight: bold;
+            position: relative;
+        }
         .nav-link:hover {
-            color: #ffffff !important;
-            /* Наслоение теней создает эффект, будто свет идет изнутри букв */
-            text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-            filter: drop-shadow(0 0 4px #00ffcc);
-            transform: scale(1.02); /* Легкий объем для усиления эффекта */
+            color: #00ffcc !important;
+            background: linear-gradient(to bottom, #ffffff 0%, #00ffcc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 2px #00ffcc) drop-shadow(0 0 8px rgba(0,255,204,0.8));
+            transform: scale(1.05);
         }
         .nav-link:active {
-            text-shadow: 0 0 5px #00ff88, 0 0 15px #00ff88;
+            filter: drop-shadow(0 0 2px #00ff88);
         }
-
         /* Эффект свечения для кнопки выбора языка */
         .lang-btn {
             transition: all 0.2s ease-in-out;
