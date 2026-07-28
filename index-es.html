@@ -1,1 +1,104 @@
 
+[28.07.2026 16:42] Vladimir: <!DOCTYPE html>
+<html lang="es-419">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VestTrading - Plataforma Global de Inversiones</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        :root {
+            --bg-dark: #0b1120;
+            --primary-blue: #00f2fe;
+            --primary-green: #00ff87;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+        }
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: rgba(11, 17, 32, 0.8); }
+        .logo { font-size: 1.6rem; font-weight: 800; text-decoration: none; color: #fff; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-blue); }
+        
+        .hero { text-align: center; padding: 100px 20px; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; background: linear-gradient(135deg, #fff, var(--text-muted)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.6; }
+        
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .card { background: rgba(17, 24, 39, 0.6); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; transition: transform 0.3s, border-color 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+        .card-icon { font-size: 2rem; margin-bottom: 15px; }
+        .card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #fff; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+        
+        .lang-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 8px 12px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+        .lang-dropdown { position: relative; display: inline-block; }
+        .lang-options { display: none; position: absolute; right: 0; background: #111827; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; z-index: 100; min-width: 150px; }
+        .lang-dropdown:hover .lang-options { display: block; }
+        .lang-options a { color: var(--text-muted); padding: 10px 15px; display: flex; align-items: center; text-decoration: none; font-size: 0.9rem; }
+        .lang-options a:hover { background: rgba(255,255,255,0.05); color: #fff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index-es.html" class="logo">
+            <span style="color: var(--primary-blue);">Vest</span>Trading
+        </a>
+        
+        <nav class="nav-links">
+            <a href="index-es.html" style="color: var(--primary-blue);">Inicio</a>
+            <a href="forex.html">Forex</a>
+            <a href="crypto.html">Crypto</a>
+            <a href="ai-tools.html">Herramientas de IA</a>
+            <a href="academy.html">Academia</a>
+            <a href="contact.html">Contacto</a>
+            <a href="profile.html">Perfil</a>
+        </nav>
+
+        <div class="lang-dropdown">
+            <button class="lang-btn">🌐 Español</button>
+            <div class="lang-options">
+                <a href="index.html">English</a>
+                <a href="index-ru.html">Русский</a>
+                <a href="index-es.html">Español</a>
+                <a href="index-pt.html">Português</a>
+                <a href="index-fr.html">Français</a>
+                <a href="index-ar.html">العربية</a>
+            </div>
+        </div>
+    </header>
+[28.07.2026 16:42] Vladimir: <main class="hero">
+        <h1>Opere de manera más inteligente.<br>Construya su futuro.</h1>
+        <p>Educación basada en IA, análisis de mercado y trading profesional para Forex, Crypto y Acciones de forma totalmente segura.</p>
+    </main>
+
+    <section class="cards-grid">
+        <div class="card">
+            <div class="card-icon">📈</div>
+            <h3>Análisis de Mercado</h3>
+            <p>Análisis diario completo de los principales mercados financieros del mundo.</p>
+        </div>
+        
+        <div class="card">
+            <div class="card-icon">🎓</div>
+            <h3>Academia de Trading</h3>
+            <p>Cursos exclusivos desde el nivel básico hasta el avanzado con mentores.</p>
+        </div>
+        
+        <div class="card">
+            <div class="card-icon">🤖</div>
+            <h3>Asistente de IA</h3>
+            <p>Auxiliar inteligente para el análisis automatizado de tendencias y aprendizaje.</p>
+        </div>
+        
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>Señales de Trading</h3>
+            <p>Ideas de negociación y señales de alta precisión en tiempo real.</p>
+        </div>
+    </section>
+
+</body>
+</html>
