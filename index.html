@@ -257,38 +257,35 @@
             display: flex !important;
         }
     </style>
-
-    <div class="logo" style="display:flex; align-items:center;">
-        <img src="logo.png" alt="VestTrading" style="height:60px;">
-    </div>
-
-    <div style="display:flex; align-items:center; gap:30px;">
-        <nav class="nav-links" style="display:flex; align-items:center; gap:20px;">
-            <a href="index.html" class="nav-link" data-lang="nav-home" style="color:#ffffff; text-decoration:none;">Inicio</a>
-            <a href="academy.html" class="nav-link" data-lang="nav-academy" style="color:#ffffff; text-decoration:none;">Academia</a>
-            <a href="ai-tools.html" class="nav-link" data-lang="nav-ai" style="color:#ffffff; text-decoration:none;">AI Assistant</a>
-            <a href="forex.html" class="nav-link" data-lang="nav-forex" style="color:#ffffff; text-decoration:none;">Forex</a>
-            <a href="crypto.html" class="nav-link" data-lang="nav-crypto" style="color:#ffffff; text-decoration:none;">Crypto</a>
-            <a href="profile.html" class="nav-link" data-lang="nav-profile" style="color:#ffffff; text-decoration:none;">Perfil</a>
-        </nav>
-
-      <div class="lang-dropdown" style="display:inline-block; position:relative;" onmouseenter="document.getElementById('langMenu').style.display='flex'" onmouseleave="document.getElementById('langMenu').style.display='none'">
-            <button class="lang-btn" style="display:flex; align-items:center; gap:8px; background-color:#0b132b; color:#ffffff; border:1px solid #3f3f46; padding:8px 12px; cursor:pointer; border-radius:4px;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0055ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                En
-            </button>
-            <div id="langMenu" class="lang-options" style="display:none; position:absolute; top:100%; right:0; background-color:#0b132b; flex-direction:column; padding:10px; border:1px solid #3f3f46; border-radius:4px; z-index:10; min-width:120px;">
-                <a href="index-en.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">English</a>
-                <a href="index-ru.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Русский</a>
-                <a href="index-es.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Español</a>
-                <a href="index-ar.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">العربية</a>
-                <a href="index-fr.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Français</a>
-                <a href="index-pt.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Português</a>
-            </div>
-        </div>
-    </div>
-</header>
-
+ <style>
+ .cards-grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            flex: 1;
+            background-color: #0b132b;
+            border: 1px solid #3f3f46;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: #00ffcc;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+            transform: translateY(-5px);
+        }
+</style>
+  
 <main style="position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; max-width: 800px; box-sizing: border-box; padding: 20px; z-index: 1;">
     <h1 data-lang="hero-title" style="color: #ffffff; font-size: 2.8rem; margin: 0 0 10px 0; font-family: sans-serif; font-weight: bold; text-shadow: 0 0 15px rgba(0, 255, 204, 0.2);">Bienvenido a VestTrading</h1>
     <p data-lang="hero-subtitle" style="color: #00ffcc; font-size: 1.4rem; margin: 0 0 35px 0; font-family: sans-serif;">Tradea más inteligente</p>
