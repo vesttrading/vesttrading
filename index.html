@@ -211,7 +211,7 @@
 <body>
 
 <header style="display:flex; justify-content:space-between; align-items:center; width:100%; box-sizing:border-box; padding:10px 20px; background-color:#020813;">
-    <div class="logo">
+    <div class="logo" style="display:flex; align-items:center;">
         <img src="logo.png" alt="VestTrading" style="height:60px;">
     </div>
 
@@ -225,23 +225,21 @@
             <a href="profile.html" class="nav-link" data-lang="nav-profile" style="color:#ffffff; text-decoration:none;">Perfil</a>
         </nav>
 
-          <div class="lang-dropdown" style="display:inline-block; position:relative;">
-            <!-- Кнопка с оригинальным тегом глобуса и стилями -->
+        <div class="lang-dropdown" style="display:inline-block; position:relative;">
             <button class="lang-btn" style="display:flex; align-items:center; gap:8px; background-color:#0b132b; color:#ffffff; border:1px solid #3f3f46; padding:8px 12px; cursor:pointer; border-radius:4px;">
-                <i class="fas fa-globe"></i> English
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#ffffff;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                Русский
             </button>
-           
             <div class="lang-options" style="display:flex; position:absolute; top:100%; right:0; background-color:#0b132b; flex-direction:column; padding:10px; border:1px solid #3f3f46; border-radius:4px; z-index:10; min-width:120px;">
+                <a href="index-ru.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Русский</a>
                 <a href="index-en.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">English</a>
                 <a href="index-es.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Español</a>
                 <a href="index-ar.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">العربية</a>
                 <a href="index-fr.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Français</a>
                 <a href="index-pt.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Português</a>
-                <a href="index-ru.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Русский</a>
-            </div>
-        </div>
+         </div>
+    </div>
 </header>
-
 <main style="margin-top:100px; padding:20px;">
 <h1 data-lang="hero-title">Bienvenido a VestTrading</h1>
 <p data-lang="hero-subtitle">Tradea más inteligente. Construye tu futuro.</p>
