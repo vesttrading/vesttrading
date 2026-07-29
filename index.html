@@ -17,7 +17,7 @@
     /* Навигация (Шапка сайта) */
     header {
       display: flex;
-      justify-content: space-between;
+      position: relative;
       align-items: center;
       padding: 20px 40px;
       background: rgba(0, 0, 0, 0.5);
@@ -36,6 +36,9 @@
     nav {
       display: flex;
       gap: 25px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     nav a {
