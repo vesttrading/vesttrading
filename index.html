@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -51,12 +51,14 @@
             letter-spacing: 0.5px;
         }
 
+        /* Бирюзовый логотип VT */
         .logo span.vt {
-            background: linear-gradient(135deg, #0072ff, #00f2fe);
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-right: 8px;
             font-size: 28px;
+            text-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
         }
 
         nav {
@@ -79,7 +81,7 @@
             color: #ffffff;
         }
 
-        /* Синяя линия под активным пунктом */
+        /* Бирюзовая линия под активным пунктом */
         nav a.active::after {
             content: '';
             position: absolute;
@@ -87,8 +89,8 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: #0072ff;
-            box-shadow: 0 0 10px #0072ff;
+            background: #00f2fe;
+            box-shadow: 0 0 10px #00f2fe;
         }
 
         /* Кнопка переключения языка */
@@ -135,14 +137,16 @@
             margin: 0 0 10px 0;
             letter-spacing: -1px;
         }
-       .subtitle {
+            /* Бирюзовый подзаголовок Build Your Future. */
+        .subtitle {
             font-size: 54px;
             font-weight: 800;
             margin: 0 0 25px 0;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -1px;
+            filter: drop-shadow(0 0 20px rgba(0, 242, 254, 0.2));
         }
 
         .description {
@@ -178,17 +182,17 @@
             box-sizing: border-box;
         }
 
-        /* Левая градиентная кнопка (Academy) */
+        /* Левая БИРЮЗОВАЯ градиентная кнопка (Academy) */
         .btn-primary {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-            color: #ffffff;
+            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            color: #020813; /* Тёмный текст для лучшей читаемости на бирюзовом */
             border: none;
-            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(124, 58, 237, 0.5);
+            box-shadow: 0 6px 25px rgba(0, 242, 254, 0.7);
         }
 
         /* Правая контурная кнопка (AI Assistant) */
@@ -200,10 +204,10 @@
         }
 
         .btn-secondary:hover {
-            border-color: #ffffff;
+            border-color: #00f2fe; /* Подсветка бирюзовым при наведении */
             background: rgba(255, 255, 255, 0.05);
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.2);
         }
 
         .btn svg {
@@ -218,7 +222,7 @@
             h1 { font-size: 42px; }
             .subtitle { font-size: 36px; }
             .description { font-size: 15px; }
-            nav { display: none; } /* Скрытие меню на мобильных для упрощения */
+            nav { display: none; }
             .cta-buttons { flex-direction: column; }
         }
     </style>
@@ -237,7 +241,6 @@
             <a href="forex.html">Forex</a>
             <a href="crypto.html">Crypto</a>
             <div class="lang-selector">
-                <!-- SVG иконка голубого глобуса -->
                 <span class="globe-icon">
                     <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 </span>
@@ -252,9 +255,9 @@
         <div class="subtitle">Build Your Future.</div>
         
         <p class="description">
-            Al-powered education, market analysis and professional trading for Forex, Crypto and Stocks.
+            AI-powered education, market analysis and professional trading for Forex, Crypto and Stocks.
         </p>
-                   <!-- Две средние кнопки -->
+            <!-- Две средние кнопки -->
         <div class="cta-buttons">
             <!-- Кнопка Academy со значком -->
             <a href="academy.html" class="btn btn-primary">
