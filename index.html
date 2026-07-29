@@ -66,7 +66,7 @@
             gap: 25px;
         }
 
-        /* Обычные ссылки в меню */
+        /* Обычные ссылки в меню без линий */
         nav a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
@@ -81,18 +81,6 @@
         nav a:hover, nav a:active, nav a.active {
             color: #39ff14 !important; /* Насыщенный неоновый зеленый */
             text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
-        }
-
-        /* Сочно-зеленая светящаяся линия под активным пунктом */
-        nav a:hover::after, nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -22px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: #39ff14;
-            box-shadow: 0 0 12px #39ff14, 0 0 25px #39ff14;
         }
 
         /* Кнопка переключения языка */
@@ -139,8 +127,7 @@
             margin: 0 0 10px 0;
             letter-spacing: -1px;
         }
-
-        /* Бирюзовый подзаголовок Build Your Future. */
+             /* Бирюзовый подзаголовок Build Your Future. */
         .subtitle {
             font-size: 54px;
             font-weight: 800;
@@ -251,7 +238,8 @@
             </div>
         </nav>
     </header>
-        <!-- Главный блок (Центр страницы) -->
+
+    <!-- Главный блок (Центр страницы) -->
     <main>
         <h1>Trade Smarter</h1>
         <div class="subtitle">Build Your Future.</div>
@@ -259,8 +247,7 @@
         <p class="description">
             AI-powered education, market analysis and professional trading for Forex, Crypto and Stocks.
         </p>
-
-        <!-- Две средние кнопки -->
+            <!-- Две средние кнопки -->
         <div class="cta-buttons">
             <!-- Кнопка Academy со значком -->
             <a href="academy.html" class="btn btn-primary">
