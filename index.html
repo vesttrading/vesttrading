@@ -133,20 +133,21 @@
 
 /* Ссылки на языки внутри меню */
 .lang-dropdown a {
-    display: block;
+    display: block !important;
     color: rgba(255, 255, 255, 0.8) !important;
-    padding: 8px 16px;
-    text-decoration: none;
+    padding: 4px 12px !important; /* Сблизили кнопки по вертикали */
+    text-decoration: none !important;
     font-size: 14px;
     text-align: center;
     transition: all 0.2s ease;
+    cursor: pointer !important;
 }
 
-/* Зеленое неоновое свечение при выборе языка */
+/* СОЧНО-ЗЕЛЕНОЕ НЕОНОВОЕ СВЕЧЕНИЕ ПРИ НАВЕДЕНИИ */
 .lang-dropdown a:hover {
-    background: rgba(57, 255, 20, 0.1);
+    background: rgba(57, 255, 20, 0.15) !important;
     color: #39ff14 !important;
-    text-shadow: 0 0 8px #39ff14;
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14 !important;
 }
 
 /* Показываем меню при наведении на контейнер */
