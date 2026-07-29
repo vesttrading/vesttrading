@@ -1,11 +1,10 @@
- <!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VestTrading | Trade Smarter</title>
+  <title>VestTrading | Торгуйте умнее</title>
   <style>
-    /* Базовые стили */
     body {
       margin: 0;
       padding: 0;
@@ -15,216 +14,177 @@
       overflow-x: hidden;
     }
 
-    #candles-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background-color: #000000;
-    }
-
     /* Навигация (Шапка сайта) */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      position: relative;
-      z-index: 100;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid #1f2d3d;
     }
 
     .logo span {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: bold;
       background: linear-gradient(135deg, #00f0ff, #3df2a0);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Языковое меню */
-    .lang-dropdown {
-      position: relative;
-      display: inline-block;
+    nav {
+      display: flex;
+      gap: 25px;
     }
 
-    .lang-btn {
-      background: transparent;
-      border: 1px solid #1f2d3d;
+    nav a {
       color: #ffffff;
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
-    .lang-btn:hover {
-      border-color: #00f0ff;
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    nav a:hover {
+      color: #00f0ff;
     }
 
-    /* Главная секция */
+    /* Главный контейнер */
     .main-container {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      width: 100% !important;
-      max-width: 1200px !important;
-      margin: 0 auto !important;
-      padding-top: 50px !important; /* Отступ под шапку сайта */
-      position: relative !important;
-      z-index: 10 !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 40px; /* Идеальный верхний зазор, чтобы карточки не падали вниз */
     }
 
     .hero-title {
-      color: #ffffff !important;
-      font-size: 2.8rem !important;
-      text-align: center !important;
-      margin-top: 20px !important;
-      margin-bottom: 10px !important;
+      font-size: 2.8rem;
+      text-align: center;
+      margin: 20px 0 10px 0;
     }
 
     .hero-subtitle {
-      color: #00ffcc !important;
-      font-size: 1.4rem !important;
-      text-align: center !important;
+      color: #00ffcc;
+      font-size: 1.4rem;
+      text-align: center;
+      margin: 0;
     }
 
     /* Сетка карточек */
     .cards-container {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
-      gap: 20px !important;
-      width: 100% !important;
-      max-width: 1000px !important;
-      margin-top: 0px !important;
-      padding: 20px !important;
-      box-sizing: border-box !important;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 15px; /* Карточки плотно поджаты к тексту заголовка */
+      padding: 20px;
+      box-sizing: border-box;
     }
 
-    /* Стили карточек */
     .card-item {
-      flex: 1 !important;
-      min-width: 240px !important;
-      background-color: #0b132b !important;
-      border: 1px solid #1f2d3d !important;
-      border-radius: 8px !important;
-      padding: 25px !important;
-      text-align: center !important;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-      transition: all 0.3s ease !important;
+      flex: 1;
+      min-width: 240px;
+      background-color: #0b132b;
+      border: 1px solid #1f2d3d;
+      border-radius: 8px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
     }
 
     .card-item:hover {
-      transform: translateY(-5px) !important;
+      transform: translateY(-5px);
     }
 
-    .card-item:nth-child(1):hover { border-color: #3df2a0 !important; box-shadow: 0px 4px 15px rgba(61, 242, 160, 0.4) !important; }
-    .card-item:nth-child(2):hover { border-color: #00f0ff !important; box-shadow: 0px 4px 15px rgba(0, 240, 255, 0.4) !important; }
-    .card-item:nth-child(3):hover { border-color: #3df2a0 !important; box-shadow: 0px 4px 15px rgba(61, 242, 160, 0.4) !important; }
+    /* Индивидуальная неоновая подсветка карточек при наведении */
+    .card-item:nth-child(1):hover { border-color: #3df2a0; box-shadow: 0px 4px 15px rgba(61, 242, 160, 0.4); }
+    .card-item:nth-child(2):hover { border-color: #00f0ff; box-shadow: 0px 4px 15px rgba(0, 240, 255, 0.4); }
+    .card-item:nth-child(3):hover { border-color: #3df2a0; box-shadow: 0px 4px 15px rgba(61, 242, 160, 0.4); }
 
-    .card-title {
-      color: #ffffff !important;
-      font-size: 1.4rem !important;
-      margin: 10px 0 !important;
-    }
+    .card-title { font-size: 1.4rem; margin: 10px 0; }
+    .card-desc { color: #a0aec0; font-size: 1rem; margin: 0; }
 
-    .card-desc {
-      color: #a0aec0 !important;
-      font-size: 1rem !important;
-      margin: 0 !important;
-    }
-
-    /* Футер и кнопки соцсетей */
+    /* Кнопки соцсетей в футере */
     .main-footer {
-      width: 100% !important;
-      text-align: center !important;
-      padding: 10px 20px 20px 20px !important;
-      margin-top: 0px !important;
-      box-sizing: border-box !important;
+      width: 100%;
+      text-align: center;
+      padding: 10px 20px 30px 20px; /* Компактные отступы футера */
+      margin-top: 0px;
+      box-sizing: border-box;
     }
-     .footer-socials {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
-      gap: 20px !important;
-      width: 100% !important;
-      max-width: 600px !important;
-      margin: 0 auto !important;
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
     .social-link {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      padding: 12px 24px !important;
-      background-color: #0b132b !important;
-      border: 1px solid #1f2d3d !important;
-      border-radius: 8px !important;
-      color: #ffffff !important;
-      text-decoration: none !important;
-      font-size: 0.95rem !important;
-      transition: all 0.3s ease !important;
-      min-width: 120px !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      background-color: #0b132b;
+      border: 1px solid #1f2d3d;
+      border-radius: 8px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      min-width: 120px;
     }
 
     .social-link:hover {
-      color: #00ffcc !important;
-      border-color: #00ffcc !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.3) !important;
+      color: #00ffcc;
+      border-color: #00ffcc;
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
     }
   </style>
 </head>
 <body>
 
-  <!-- Анимированный фон -->
-  <canvas id="candles-bg"></canvas>
-
-  <!-- Верхняя панель навигации -->
+  <!-- Шапка сайта -->
   <header>
     <div class="logo">
       <span>VestTrading</span>
     </div>
-    <div class="lang-dropdown">
-      <button class="lang-btn">Español</button>
-    </div>
+    <nav>
+      <a href="#forex">Forex</a>
+      <a href="#crypto">Crypto</a>
+      <a href="#academy">Academy</a>
+      <a href="#ai-assistant">AI Assistant</a>
+    </nav>
   </header>
-
-  <!-- Главный контент страницы -->
+ <!-- Главный блок -->
   <main class="main-container">
-    <h1 data-lang="hero-title" class="hero-title">Opere de manera más inteligente.</h1>
-    <p data-lang="hero-subtitle" class="hero-subtitle">Construya su futuro financiero.</p>
+    <h1 class="hero-title">Торгуйте умнее</h1>
+    <p class="hero-subtitle">Стройте свое финансовое будущее</p>
 
-    <!-- Блок с карточками -->
+    <!-- Сетка карточек -->
     <div class="cards-container">
-      
-      <!-- Карточка 1 -->
       <div class="card-item">
-        <h3 data-lang="card1-title" class="card-title">Market Analysis</h3>
-        <p data-lang="card1-desc" class="card-desc">Detailed market analysis.</p>
+        <h3 class="card-title">Анализ рынка</h3>
+        <p class="card-desc">Подробный и точный анализ рыночных трендов.</p>
       </div>
-
-      <!-- Карточка 2 -->
       <div class="card-item">
-        <h3 data-lang="card2-title" class="card-title">Trading Academy</h3>
-        <p data-lang="card2-desc" class="card-desc">Comprehensive courses.</p>
+        <h3 class="card-title">Академия трейдинга</h3>
+        <p class="card-desc">Полноценные обучающие курсы для любого уровня.</p>
       </div>
-
-      <!-- Карточка 3 -->
       <div class="card-item">
-        <h3 data-lang="card3-title" class="card-title">AI Assistant</h3>
-        <p data-lang="card3-desc" class="card-desc">Smart trading tools.</p>
+        <h3 class="card-title">ИИ-Помощник</h3>
+        <p class="card-desc">Умные инструменты для автоматизации торговли.</p>
       </div>
-
     </div>
   </main>
 
-  <!-- Нижняя панель (Футер) -->
+  <!-- Социальные сети -->
   <footer class="main-footer">
     <div class="footer-socials">
       <a href="https://t.me" target="_blank" class="social-link">Telegram</a>
