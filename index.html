@@ -1,658 +1,237 @@
- <!DOCTYPE html>
-<html lang="en">
+[29.07.2026 15:19] Vladimir: <!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VestTrading | Trade Smarter</title>
-    <style>
-    :root {
-        --bg-color: #061118;
-        --primary-blue: #00f0ff;
-        --primary-green: #3df2a0;
-        --primary-red: #ef4444;
-        --text-muted: #7a93a1;
-        --juicy-gradient: linear-gradient(135deg, #00f0ff 0%, #3df2a0 100%);
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VestTrading | Trade Smarter</title>
+  <style>
+    /* Базовые стили */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000000;
+      font-family: sans-serif;
+      color: #ffffff;
+      overflow-x: hidden;
     }
-   .logo {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-   }
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: var(--primary-green); }
-     .lang-dropdown {
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
-     
-.lang-btn {
-    background: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
-    padding: 8px 14px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-.lang-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-.hero-btn, .btn, .button, [class*="btn"] {
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-.hero-btn:hover, .btn:hover, .button:hover, [class*="btn"]:hover {
-    box-shadow: 0 0 25px #00a8ff !important;
-    transform: translateY(-2px) !important;
-}
-.btn-secondary {
-    background: transparent !important;
-    color: #ffffff !important;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4) !important;
-    border: 1px solid #00f0ff !important;
-    transition: all 0.3s ease !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-/* Универсальное исправление: выводим контент под меню */
-  main, [class*="hero"], .main-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    width: 100% !important;
-    max-width: 1200px !important;
-    height: auto !important;
-    min-height: auto !important;
-    margin: 0 auto !important;
-    padding-top: 140px !important; /* Безопасный отступ, чтобы меню ничего не перекрывало */
-    position: relative !important;
-    z-index: 10 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
 
-  /* Заголовки */
-  main h1, main p, .hero-title, .hero-subtitle {
-    text-align: center !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    display: block !important;
-  }
-  main h1, .hero-title { color: #ffffff !important; font-size: 2.8rem !important; margin-bottom: 10px !important; }
-  main p, .hero-subtitle { color: #00ffcc !important; font-size: 1.4rem !important; }
+    #candles-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #000000;
+    }
 
-  /* Контейнер для карточек */
-  main > div, .cards-container {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 20px !important;
-    width: 100% !important;
-    margin-top: 30px !important;
-    padding: 20px !important;
-    box-sizing: border-box !important;
-  }
+    /* Навигация (Шапка сайта) */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: relative;
+      z-index: 100;
+    }
 
-  /* Карточки */
-  .card, [class*="card"], .card-item {
-    flex: 1 !important;
-    min-width: 220px !important;
-    background-color: #0b132b !important;
-    border: 1px solid #1f2d3d !important;
-    border-radius: 8px !important;
-    padding: 20px !important;
-    text-align: center !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-    transition: all 0.3s ease !important;
-  }
-  .card:hover, [class*="card"]:hover, .card-item:hover { 
-    transform: translateY(-5px) !important; 
-    border-color: #00ffcc !important; 
-    box-shadow: 0px 4px 15px rgba(0, 255, 204, 0.4) !important;
-  }
-  .card:hover {
-    transform: translateY(-5px) !important;
-  }
+    .logo span {
+      font-size: 32px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #00f0ff, #3df2a0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-  .card:nth-child(1):hover { border-color: #3df2a0 !important; box-shadow: 0px 4px 15px rgba(61, 242, 160, 0.3) !important; }
-  .card:nth-child(2):hover { border-color: #00f0ff !important; box-shadow: 0px 4px 15px rgba(0, 240, 255, 0.3) !important; }
-  .card:nth-child(3):hover { border-color: #3df2a0 !important; box-shadow: 0px 4px 15px rgba(61, 242, 160, 0.3) !important; }
+    /* Языковое меню */
+    .lang-dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
-  .card-title { color: #ffffff !important; margin: 10px 0 !important; }
-  .card-desc { color: #a0aec0 !important; margin: 0 !important; }
-.hero-buttons a:last-child:hover, 
-.hero-buttons button:last-child:hover,
-.btn-secondary:hover {
-    box-shadow: 0 0 30px #00f0ff !important;
-    border-color: #00f0ff !important;
-    transform: translateY(-2px) !important;
-}
+    .lang-btn {
+      background: transparent;
+      border: 1px solid #1f2d3d;
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-    display: none;
-    position: absolute;
-    right: 0;
-    background: var(--bg-color);
-    min-width: 80px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 6px;
-    z-index: 100;
-}
-.lang-options a {
-    color: #9ca3af;
-    padding: 8px 12px;
-    text-decoration: none;
-    display: block;
-    font-size: 0.85rem;
-    text-align: center;
-}
-.lang-options a:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--primary-green);
-}
-.lang-dropdown:hover .lang-options {
-    display: block;
-}
-        
-        .hero {
-            max-width: 1000px;
-            margin: 60px auto 40px auto;
-            text-align: center;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-        .hero-logo-placeholder {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px auto;
-            background: var(--juicy-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            box-shadow: 0 0 30px rgba(50, 130, 246, 0.4);
-        }
-        .hero h1 { font-size: 3.5rem; margin: 10px 0; font-weight: 800; color: #ffffff; }
-        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 20px auto 40px auto; }
-        .btn-group { display: flex; justify-content: center; gap: 20px; margin-bottom: 80px; }
-        .btn { padding: 15px 35px; font-size: 1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
-        .btn:hover { transform: translateY(-2px); }
-        .btn-green { background-color: var(--primary-green); color: #061118; border: none; }
-        .btn-green:hover { box-shadow: 0 0 25px rgba(61, 242, 160, 0.6); }
-        .btn-blue { color: #ffffff; background: transparent; border: 2px solid var(--primary-blue); }
-        .btn-blue:hover { box-shadow: 0 0 25px rgba(0, 240, 255, 0.5); background-color: rgba(0, 240, 255, 0.1); }
-        
-        .cards-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto 60px auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-        .card {
-            background: rgba(17, 24, 39, 0.8);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 25px;
-            width: 180px;
-            text-align: left;
-            transition: border-color 0.3s, transform 0.3s;
-        .card:hover {
-            border-color: var(--primary-green);
-            transform: translateY(-4px);
-        }
-        .card-icon { font-size: 1.8rem; margin-bottom: 15px; }
-        .card h3 { font-size: 1.1rem; margin: 0 0 10px 0; color: #ffffff; }
-        .card p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
-       .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.logo img {
-    height: 45px !important;
-    width: auto !important;
-    max-height: none !important;
-    transform: none !important;
-    margin: 0 !important;
-    filter: saturate(3) contrast(1.2) drop-shadow(0 0 10px #00a8ff) !important;
-}
-.logo-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #00f0ff, #3df2a0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 22px;
-    font-weight: bold;
-    box-shadow: 0 0 20px rgba(0,240,255,.5);
-}
+    .lang-btn:hover {
+      border-color: #00f0ff;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    }
 
-.logo span {
-    font-size: 32px;
-    font-weight: bold;
-    background: linear-gradient(135deg, #00f0ff, #3df2a0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-    </style>
+    /* Главная секция */
+    .main-container {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      width: 100% !important;
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      padding-top: 100px !important; /* Отступ под шапку сайта */
+      position: relative !important;
+      z-index: 10 !important;
+    }
+
+    .hero-title {
+      color: #ffffff !important;
+      font-size: 2.8rem !important;
+      text-align: center !important;
+      margin-top: 20px !important;
+      margin-bottom: 10px !important;
+    }
+
+    .hero-subtitle {
+      color: #00ffcc !important;
+      font-size: 1.4rem !important;
+      text-align: center !important;
+    }
+
+    /* Сетка карточек */
+    .cards-container {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 20px !important;
+      width: 100% !important;
+      max-width: 1000px !important;
+      margin-top: 40px !important;
+      padding: 20px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Стили карточек */
+    .card-item {
+      flex: 1 !important;
+      min-width: 240px !important;
+      background-color: #0b132b !important;
+      border: 1px solid #1f2d3d !important;
+      border-radius: 8px !important;
+      padding: 25px !important;
+      text-align: center !important;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .card-item:hover {
+      transform: translateY(-5px) !important;
+    }
+
+    .card-item:nth-child(1):hover { border-color: #3df2a0 !important; box-shadow: 0px 4px 15px rgba(61, 242, 160, 0.4) !important; }
+    .card-item:nth-child(2):hover { border-color: #00f0ff !important; box-shadow: 0px 4px 15px rgba(0, 240, 255, 0.4) !important; }
+    .card-item:nth-child(3):hover { border-color: #3df2a0 !important; box-shadow: 0px 4px 15px rgba(61, 242, 160, 0.4) !important; }
+
+    .card-title {
+      color: #ffffff !important;
+      font-size: 1.4rem !important;
+      margin: 10px 0 !important;
+    }
+
+    .card-desc {
+      color: #a0aec0 !important;
+      font-size: 1rem !important;
+      margin: 0 !important;
+    }
+
+    /* Футер и кнопки соцсетей */
+    .main-footer {
+      width: 100% !important;
+      text-align: center !important;
+      padding: 60px 20px 40px 20px !important;
+      margin-top: 50px !important;
+      box-sizing: border-box !important;
+    }
+[29.07.2026 15:19] Vladimir: .footer-socials {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 20px !important;
+      width: 100% !important;
+      max-width: 600px !important;
+      margin: 0 auto !important;
+    }
+
+    .social-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 12px 24px !important;
+      background-color: #0b132b !important;
+      border: 1px solid #1f2d3d !important;
+      border-radius: 8px !important;
+      color: #ffffff !important;
+      text-decoration: none !important;
+      font-size: 0.95rem !important;
+      transition: all 0.3s ease !important;
+      min-width: 120px !important;
+    }
+
+    .social-link:hover {
+      color: #00ffcc !important;
+      border-color: #00ffcc !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.3) !important;
+    }
+  </style>
 </head>
-<link rel="stylesheet" href="https://cloudflare.com">
 <body>
 
-    <!-- Холст для анимированных свечей -->
-    <canvas id="candles-bg"></canvas>
+  <!-- Анимированный фон -->
+  <canvas id="candles-bg"></canvas>
 
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VestTrading</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body style="background-color: #020813 !important; margin: 0; padding: 0; position: relative; min-height: 100vh;">
-
-<header style="display:flex; justify-content:space-between; align-items:center; width:100%; box-sizing:border-box; padding:15px 30px; background-color:#020813; position:fixed; top:0; left:0; z-index:99999;">
-   <style>
-     body {
-            margin: 0;
-            padding: 0;
-            background-color: #020813 !important;
-        }
-        /* Эффект глубокого внутреннего свечения для букв меню */
-        .nav-link {
-            transition: all 0.2s ease-in-out;
-            display: inline-block;
-        }
-      /* Эффект яркого свечения внутри букв */
-        .nav-link {
-            transition: all 0.25s ease-in-out;
-            display: inline-block;
-            font-weight: bold;
-            position: relative;
-        }
-        .nav-link:hover {
-            color: #00ffcc !important;
-            background: linear-gradient(to bottom, #ffffff 0%, #00ffcc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 2px #00ffcc) drop-shadow(0 0 8px rgba(0,255,204,0.8));
-            transform: scale(1.05);
-        }
-        .nav-link:active {
-            filter: drop-shadow(0 0 2px #00ff88);
-        }
-        /* Эффект свечения для кнопки выбора языка */
-        .lang-btn {
-            transition: all 0.2s ease-in-out;
-        }
-        .lang-btn:hover {
-            border-color: #00ffcc !important;
-            box-shadow: inset 0 0 10px rgba(0, 255, 204, 0.3), 0 0 15px rgba(0, 255, 204, 0.4); /* Внутреннее + внешнее свечение */
-            color: #ffffff !important;
-            text-shadow: 0 0 8px #00ffcc;
-        }
-        .lang-btn:hover svg {
-            stroke: #00ffcc !important;
-            filter: drop-shadow(0 0 3px #00ffcc);
-        }
-
-        .lang-dropdown:hover .lang-options {
-            display: flex !important;
-        }
- 
-/* Сетка для карточек преимуществ */
-        .cards-grid {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: stretch;
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-            margin: 40px auto 0 auto;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-        .card {
-            flex: 1;
-            background-color: #0b132b;
-            border: 1px solid #3f3f46;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: left;
-            transition: all 0.3s ease;
-        }
-        .card:hover {
-            border-color: #00ffcc;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
-            transform: translateY(-5px);
-        }
-    body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-}
- 
-   </style>
-
-<div class="logo" style="display:flex; align-items:center;">
-    <img src="logo.png" alt="VestTrading" style="height:60px;">
-</div>
-
-<div style="display:flex; align-items:center; gap:30px;">
-    <nav class="nav-links" style="display:flex; align-items:center; gap:20px;">
-        <a href="index.html" class="nav-link" data-lang="nav-home" style="color:#ffffff; text-decoration:none;">Inicio</a>
-        <a href="academy.html" class="nav-link" data-lang="nav-academy" style="color:#ffffff; text-decoration:none;">Academia</a>
-        <a href="ai-tools.html" class="nav-link" data-lang="nav-ai" style="color:#ffffff; text-decoration:none;">AI Assistant</a>
-        <a href="forex.html" class="nav-link" data-lang="nav-forex" style="color:#ffffff; text-decoration:none;">Forex</a>
-        <a href="crypto.html" class="nav-link" data-lang="nav-crypto" style="color:#ffffff; text-decoration:none;">Crypto</a>
-        <a href="profile.html" class="nav-link" data-lang="nav-profile" style="color:#ffffff; text-decoration:none;">Perfil</a>
-    </nav>
-
-    <div class="lang-dropdown" style="display:inline-block; position:relative;" onmouseenter="document.getElementById('langMenu').style.display='flex'" onmouseleave="document.getElementById('langMenu').style.display='none'">
-        <button class="lang-btn" style="display:flex; align-items:center; gap:8px; background-color:#0b132b; color:#ffffff; border:1px solid #3f3f46; padding:8px 12px; cursor:pointer; border-radius:4px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0055ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            Es
-        </button>
-      <div id="langMenu" class="lang-options" style="display:none; position:absolute; top:100%; right:0; background-color:#0b132b; flex-direction:column; padding:10px; border:1px solid #3f3f46; border-radius:4px; z-index:10; min-width:120px;">
-                <a href="index-en.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">English</a>
-                <a href="index-ru.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Русский</a>
-                <a href="index-es.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Español (Latam)</a>
-                <a href="index-ar.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">العربية</a>
-                <a href="index-fr.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Français</a>
-                <a href="index-pt.html" style="color:#ffffff; text-decoration:none; padding:5px 0;">Português</a>
-            </div>
-        </div>
-    </div> 
-</header>
-
-  <center>
-  <main style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; width: 100%; max-width: 1200px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; position: relative; z-index: 5;">
-    
-    <h1 data-lang="hero-title" style="color: #ffffff; font-size: 2.8rem; margin: 0 0 10px 0; font-family: sans-serif; font-weight: bold;">Bienvenido a VestTrading</h1>
-    <p data-lang="hero-subtitle" style="color: #00ffcc; font-size: 1.4rem; margin: 0 0 35px 0; font-family: sans-serif;">Tradea más inteligente</p>
-    
-    <div style="display: inline-flex; flex-direction: row; gap: 20px; margin-bottom: 50px;">
-        <a href="academy.html" style="display: inline-block; padding: 12px 30px; font-size: 1rem; font-weight: bold; font-family: sans-serif; color: #020813; background-color: #00ffcc; border: 2px solid #00ffcc; border-radius: 6px; text-decoration: none;">
-            Academy
-       
-  <!-- Правая кнопка AI Assistant (Синяя неоновая) -->
-    <a href="ai-tools.html" data-lang="nav-ai" style="display: inline-block; padding: 12px 30px; font-weight: 600; color: #fff; background: transparent; border: 2px solid #00f2fe; border-radius: 8px; text-decoration: none; box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);">
-        AI Assistant
-    </a>
-</div>
-
-   <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; padding: 0 20px; box-sizing: border-box;">
-    
-    <!-- Карточка 1 (Свечение при наведении) -->
-    <div class="card" style="flex: 1; min-width: 220px; background-color: #0b132b; border: 1px solid #3f3f46; border-radius: 8px; padding: 20px; text-align: left; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.3);" onmouseover="this.style.borderColor='#00ffcc'; this.style.boxShadow='0 0 20px rgba(0, 255, 204, 0.4)'; this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='#3f3f46'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.3)'; this.style.transform='translateY(0)'">
-        <div class="card-icon">📊</div>
-        <h3 data-lang="card1-title" style="color:#ffffff; margin: 10px 0;">Market Analysis</h3>
-        <p data-lang="card1-desc" style="color:#a0aec0; margin:0;">Ежедневный анализ рынков.</p>
+  <!-- Верхняя панель навигации -->
+  <header>
+    <div class="logo">
+      <span>VestTrading</span>
     </div>
-
-  <!-- Карточка 2 (Синее свечение при наведении) -->
-    <div class="card" style="flex: 1; min-width: 220px; background-color: #0b132b; border: 1px solid #3f3f46; border-radius: 8px; padding: 20px; text-align: left; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#0055ff'; this.style.boxShadow='0 0 20px rgba(0, 85, 255, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#3f3f46'; this.style.boxShadow='none'; this.style.transform='translateY(0)';">
-        <div class="card-icon">🎓</div>
-        <h3 data-lang="card2-title" style="color:#ffffff; margin: 10px 0;">Trading Academy</h3>
-        <p data-lang="card2-desc" style="color:#a0aec0; margin:0;">Курсы от базового до продвинутого.</p>
+    <div class="lang-dropdown">
+      <button class="lang-btn">Español</button>
     </div>
+  </header>
 
-    <!-- Карточка 3 (Бирюзовое свечение при наведении) -->
-    <div class="card" style="flex: 1; min-width: 220px; background-color: #0b132b; border: 1px solid #3f3f46; border-radius: 8px; padding: 20px; text-align: left; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#00ffcc'; this.style.boxShadow='0 0 20px rgba(0, 255, 204, 0.5)'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='#3f3f46'; this.style.boxShadow='none'; this.style.transform='translateY(0)';">
-        <div class="card-icon">🤖</div>
-        <h3 data-lang="card3-title" style="color:#ffffff; margin: 10px 0;">AI Assistant</h3>
-        <p data-lang="card3-desc" style="color:#a0aec0; margin:0;">Помощник для анализа рынка.</p>
+  <!-- Главный контент страницы -->
+  <main class="main-container">
+    <h1 data-lang="hero-title" class="hero-title">Opere de manera más inteligente.</h1>
+    <p data-lang="hero-subtitle" class="hero-subtitle">Construya su futuro financiero.</p>
+
+    <!-- Блок с карточками -->
+    <div class="cards-container">
+      
+      <!-- Карточка 1 -->
+      <div class="card-item">
+        <h3 data-lang="card1-title" class="card-title">Market Analysis</h3>
+        <p data-lang="card1-desc" class="card-desc">Detailed market analysis.</p>
+      </div>
+
+      <!-- Карточка 2 -->
+      <div class="card-item">
+        <h3 data-lang="card2-title" class="card-title">Trading Academy</h3>
+        <p data-lang="card2-desc" class="card-desc">Comprehensive courses.</p>
+      </div>
+
+      <!-- Карточка 3 -->
+      <div class="card-item">
+        <h3 data-lang="card3-title" class="card-title">AI Assistant</h3>
+        <p data-lang="card3-desc" class="card-desc">Smart trading tools.</p>
+      </div>
+
     </div>
+  </main>
 
-</div>
-</main>
-</center>
-    <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px;">
-    <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
-        <a href="https://t.me" target="_blank" style="font-size: 1.8rem; color: #0088cc; text-decoration: none;"><i class="fab fa-telegram"></i></a>
-        <a href="https://wa.me" target="_blank" style="font-size: 1.8rem; color: #25d366; text-decoration: none;"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://instagram.com" target="_blank" style="font-size: 1.8rem; color: #e1306c; text-decoration: none;"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" style="font-size: 1.8rem; color: #ff0000; text-decoration: none;"><i class="fab fa-youtube"></i></a>
-        <a href="https://tiktok.com" target="_blank" style="font-size: 1.8rem; color: #00f2fe; text-decoration: none;"><i class="fab fa-tiktok"></i></a>
+  <!-- Нижняя панель (Футер) -->
+  <footer class="main-footer">
+    <div class="footer-socials">
+      <a href="https://t.me" target="_blank" class="social-link">Telegram</a>
+      <a href="https://wa.me" target="_blank" class="social-link">WhatsApp</a>
+      <a href="https://instagram.com" target="_blank" class="social-link">Instagram</a>
     </div>
-    <p style="color: #9ca3af; font-size: 0.9rem; margin: 0;">&copy; 2026 VestTrading. All rights reserved.</p>
-</footer>
-
-<script>
-const translations = {
-    en: {
-        "nav-home": "Home",
-        "nav-academy": "Academy",
-        "nav-ai": "AI Assistant",
-        "nav-forex": "Forex",
-        "nav-crypto": "Crypto",
-        "nav-profile": "Profile",
-        "hero-title": "Welcome to VestTrading",
-        "hero-subtitle": "Trade smarter. Build your future.",
-        "card1-title": "Market Analysis",
-        "card1-desc": "Daily analysis of major financial markets.",
-        "card2-title": "Trading Academy",
-        "card2-desc": "Courses from basic to advanced levels.",
-        "card3-title": "AI Assistant",
-        "card3-desc": "An assistant for analysis and trading.",
-        "card4-title": "Trading Signals",
-        "card4-desc": "Trading ideas and real-time signals."
-    },
-    es: {
-        "nav-home": "Inicio",
-        "nav-academy": "Academia",
-        "nav-ai": "Herramientas de IA",
-        "nav-forex": "Forex",
-        "nav-crypto": "Crypto",
-        "nav-profile": "Perfil",
-        "hero-title": "Opere de manera más inteligente.",
-        "hero-subtitle": "Construya su futuro financiero.",
-        "card1-title": "Análisis de Mercado",
-        "card1-desc": "Análisis diario completo de los principales mercados financieros del mundo.",
-        "card2-title": "Academia de Trading",
-        "card2-desc": "Cursos exclusivos desde el nivel básico hasta el avanzado con mentores.",
-        "card3-title": "Asistente de IA",
-        "card3-desc": "Auxiliar inteligente para el análisis automatizado de tendencias y aprendizaje.",
-        "card4-title": "Señales de Trading",
-        "card4-desc": "Ideas de negociación y señales de alta precisión en tiempo real."
-    },
-   ru: {
-        "nav-home": "Главная",
-        "nav-academy": "Академия",
-        "nav-ai": "ИИ Ассистент",
-        "nav-forex": "Forex",
-        "nav-crypto": "Crypto",
-        "nav-profile": "Профиль",
-        "hero-title": "Торгуйте умнее.",
-        "hero-subtitle": "Стройте свое финансовое будущее.",
-        "card1-title": "Анализ рынка",
-        "card1-desc": "Ежедневный полный анализ основных финансовых рынков мира.",
-        "card2-title": "Академия трейдинга",
-        "card2-desc": "Эксклюзивные курсы от базового до продвинутого уровня с менторами.",
-        "card3-title": "ИИ Ассистент",
-        "card3-desc": "Умный помощник для автоматического анализа трендов и обучения.",
-        "card4-title": "Торговые сигналы",
-        "card4-desc": "Идеи для сделок и высокоточные сигналы в реальном времени."
-    },
-    fr: {
-        "nav-home": "Accueil",
-        "nav-academy": "Académie",
-        "nav-ai": "Outils d'IA",
-        "nav-forex": "Forex",
-        "nav-crypto": "Crypto",
-        "nav-profile": "Profil",
-        "hero-title": "Tradez plus intelligemment.",
-        "hero-subtitle": "Construisez votre avenir.",
-        "card1-title": "Analyses de Marché",
-        "card1-desc": "Analyses quotidiennes complètes des principaux marchés financiers mondiaux.",
-        "card2-title": "Académie de Trading",
-        "card2-desc": "Des cours exclusifs du niveau débutant au niveau avancé avec des mentors.",
-        "card3-title": "Assistant IA",
-        "card3-desc": "Un assistant intelligent pour l'analyse automatisée des tendances et l'apprentissage.",
-        "card4-title": "Signaux de Trading",
-        "card4-desc": "Des idées de trading et des signaux de haute précision en temps réel."
-    },
-    ar: {
-        "nav-home": "الرئيسية",
-        "nav-academy": "الأكاديمية",
-        "nav-ai": "أدوات الذكاء الاصطناعي",
-        "nav-forex": "الفوركس",
-        "nav-crypto": "العملات الرقمية",
-        "nav-profile": "الحساب",
-        "hero-title": "تداول بذكاء أكبر.",
-        "hero-subtitle": "ابنِ مستقبلك المالي.",
-        "card1-title": "تحليل السوق",
-        "card1-desc": "تحليلات يومية شاملة لأبرز الأسواق المالية العالمية لتوجيه قراراتك.",
-        "card2-title": "أكاديمية التداول",
-        "card2-desc": "دورات حصريّة من المستوى المبتدئ إلى المتقدم تحت إشراف خبراء وموجهين.",
-        "card3-title": "مساعد الذكاء الاصطناعي",
-        "card3-desc": "مساعد ذكي للتحليل التلقائي لاتجاهات السوق وتوفير تجربة تعليمية مخصصة.",
-        "card4-title": "توصيات التداول",
-        "card4-desc": "أفكار استثمارية وإشارات تداول عالية الدقة يتم تحديثها فورياً وفي الوقت الفعلي."
-    }
-};
-
-function changeLanguage(lang) {
-    localStorage.setItem('selectedLanguage', lang);
-    
-    document.querySelectorAll('[data-lang]').forEach(element => {
-        const key = element.getAttribute('data-lang');
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    
-
-    if (lang === 'ar') {
-        document.body.style.direction = 'rtl';
-    } else {
-        document.body.style.direction = 'ltr';
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => { changeLanguage(localStorage.getItem('selectedLanguage') || 'ru'); });
-const canvas = document.getElementById('candles-bg');
-const ctx = canvas.getContext('2d');
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-const candles = [];
-const candleCount = 25;
-
-for (let i = 0; i < candleCount; i++) {
-    candles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        width: 10 + Math.random() * 15,
-        height: 40 + Math.random() * 80,
-        wickHeight: 20 + Math.random() * 40,
-        isBullish: Math.random() > 0.4,
-        speed: 0.2 + Math.random() * 0.4
-    });
-}
-
-function drawCandles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#030712';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    candles.forEach(c => {
-        const color = c.isBullish ? '#76e000' : '#ef4444';
-        ctx.strokeStyle = color;
-        ctx.fillStyle = color;
-        ctx.lineWidth = 2;
-
-        ctx.beginPath();
-        ctx.moveTo(c.x + c.width / 2, c.y - c.wickHeight / 2);
-        ctx.lineTo(c.x + c.width / 2, c.y + c.height + c.wickHeight / 2);
-        ctx.stroke();
-
-        ctx.fillRect(c.x, c.y, c.width, c.height);
-
-        c.x -= c.speed;
-        if (c.x + c.width < 0) {
-            c.x = canvas.width;
-            c.y = Math.random() * canvas.height;
-        }
-    });
-
-    requestAnimationFrame(drawCandles);
-}
- drawCandles();
-
- 
-
-  const translations = {
-    en: {
-        "hero-title": "Trade Smarter. Build Your Future.",
-        "hero-subtitle": "AI-powered education, market analysis and professional trading for Forex, Crypto and Stocks.",
-        "card1-title": "Market Analysis", "card1-desc": "Daily analysis of financial markets.",
-        "card2-title": "Trading Academy", "card2-desc": "Courses from basic to advanced levels.",
-        "card3-title": "AI Assistant", "card3-desc": "Assistant for market analysis and learning.",
-        "card4-title": "Trading Signals", "card4-desc": "Trading ideas and real-time signals.",
-        "card5-title": "Global Community", "card5-desc": "International community of traders."
-    },
-    ru: {
-        "hero-title": "Торгуйте умнее. Стройте свое будущее.",
-        "hero-subtitle": "AI-powered образование, анализ рынка и professional трейдинг для Forex, Crypto и акций.",
-        "card1-title": "Анализ рынка", "card1-desc": "Ежедневный анализ рынков.",
-        "card2-title": "Академия трейдинга", "card2-desc": "Курсы от базового до продвинутого уровня.",
-        "card3-title": "AI Ассистент", "card3-desc": "Помощник для анализа рынка и обучения.",
-        "card4-title": "Торговые сигналы", "card4-desc": "Торговые идеи и сигналы.",
-        "card5-title": "Мировое сообщество", "card5-desc": "Международное сообщество трейдеров."
-    },
-        es: { "hero-title": "Opere de manera más inteligente.", "hero-subtitle": "Construya su futuro. Educación basada en IA, análisis de mercado y trading profesional para Forex, Crypto y Acciones de forma totalmente segura.", "card1-title": "Análisis de Mercado", "card1-desc": "Análisis diario completo de los principales mercados financieros del mundo.", "card2-title": "Academia de Trading", "card2-desc": "Cursos exclusivos desde el nivel básico hasta el avanzado con mentores.", "card3-title": "Asistente de IA", "card3-desc": "Auxiliar inteligente para el análisis automatizado de tendencias y aprendizaje.", "card4-title": "Señales de Trading", "card4-desc": "Ideas de negociación y señales de alta precisión en tiempo real.", "card5-title": "Comunidad Global", "card5-desc": "Conéctese con traders de todo el mundo y comparta estrategias exitosas." },
-        pt: { "hero-title": "Opere com mais inteligência.", "hero-subtitle": "Construa seu futuro financeiro.", "card1-title": "Análise de Mercado", "card1-desc": "Análise diária completa dos principais mercados financeiros mundiais.", "card2-title": "Academia de Trading", "card2-desc": "Cursos exclusivos do nível básico ao avançado com mentores.", "card3-title": "Assistente de IA", "card3-desc": "Assistente inteligente para análise automatizada de tendências e aprendizado.", "card4-title": "Sinais de Trading", "card4-desc": "Ideias de negociação e sinais de alta precisão em tempo real.", "card5-title": "Comunidade Global", "card5-desc": "Conecte-se com traders de todo o mundo." }
-    };
-function changeLanguage(lang) {
-    localStorage.setItem('selectedLanguage', lang);
-    
-    document.querySelectorAll('[data-lang]').forEach(element => {
-        const key = element.getAttribute('data-lang');
-        if (translations[lang] && translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-
-    const langBtn = document.querySelector('.lang-btn');
-    // ИСПРАВЛЕНО: добавлена строка в косых кавычках (клавиша Ё)
-    if (langBtn) langBtn.innerHTML = 🌐 ${lang.toUpperCase()};
-
-    document.body.style.direction = (lang === 'ar') ? 'rtl' : 'ltr';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
-    changeLanguage(savedLang);
-}); // ИСПРАВЛЕНО: закрыты скобки обработчика событий
-</script>
+  </footer>
 
 </body>
 </html>
