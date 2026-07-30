@@ -26,19 +26,32 @@
         .card { background: rgba(17, 24, 39, 0.6); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: 12px; transition: transform 0.3s, border-color 0.3s; text-align: left; }
         .card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
         .card-icon { font-size: 2rem; margin-bottom: 15px; }
-        <div class="lang-dropdown">
-    <button class="lang-btn">
-        <span class="globe-icon">🌐</span> PT
-    </button>
-    <div class="lang-options">
-        <a href="index-en.html">En</a>
-        <a href="index-ru.html">Ru</a>
-        <a href="index-es.html">Es</a>
-        <a href="index-fr.html">Fr</a>
-        <a href="index-ar.html">Ar</a>
-        <a href="index-pt.html" class="active">Pt</a>
-    </div>
-</div>
+     .nav-links a:hover,
+.nav-links a:active {
+    color: var(--primary-green) !important;
+    text-shadow: 0 0 10px var(--primary-green), 0 0 20px var(--primary-green) !important;
+    transition: all 0.2s ease;
+}
+.lang-options {
+    position: absolute;
+    right: 0 !important;
+    left: auto !important;
+    width: 70px !important;
+    min-width: 70px !important;
+    padding: 5px 0 !important;
+    text-align: center !important;
+}
+.lang-options a {
+    padding: 4px 0 !important;
+    display: block !important;
+    transition: all 0.2s ease;
+}
+.lang-options a:hover,
+.lang-options a.active {
+    color: var(--primary-green) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    text-shadow: 0 0 10px var(--primary-green), 0 0 20px var(--primary-green) !important;
+}
 .lang-dropdown {
     position: relative;
 }
@@ -81,7 +94,7 @@
             <span style="color:var(--primary-blue)">Vest</span>Trading
         </a>
         <nav class="nav-links">
-            <a href="index-pt.html" style="color: var(--primary-blue)">Início</a>
+            <a href="index-pt.html">Início</a>
             <a href="forex.html">Forex</a>
             <a href="crypto.html">Crypto</a>
             <a href="ai-tools.html">Ferramentas de IA</a>
