@@ -46,13 +46,20 @@
     position: absolute;
     right: 0 !important;
     left: auto !important;
-    width: 70px !important;       /* Жёстко ограничиваем ширину, чтобы обрезать край */
-    min-width: 70px !important;   /* Не даём блоку растягиваться */
-    padding: 10px 0 !important;   /* Оставляем отступы только сверху и снизу */
-    text-align: center !important;/* Выравниваем буквы ровно по центру плашки */
+    width: 70px !important;
+    min-width: 70px !important;
+    padding: 5px 0 !important; /* Уменьшили отступ сверху и снизу всего меню */
+    text-align: center !important;
 }
+/* Сближаем буквы по высоте */
+.lang-options a {
+    padding: 4px 0 !important; /* Уменьшаем отступы между строками */
+    display: block !important;
+    transition: all 0.2s ease;
 }
-.lang-options a:hover {
+/* Возвращаем сочное зелёное свечение */
+.lang-options a:hover,
+.lang-options a.active {
     color: var(--primary-green) !important;
     background: rgba(255, 255, 255, 0.1) !important;
     text-shadow: 0 0 10px var(--primary-green), 0 0 20px var(--primary-green);
