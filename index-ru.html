@@ -18,8 +18,20 @@
         header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: rgba(11, 19, 41, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; z-index: 100; }
         .logo { font-size: 1.6rem; font-weight: 800; text-decoration: none; color: #fff; }
         .nav-links { display: flex; gap: 25px; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--primary-blue); }
+       .nav-links a {
+    color: #ffffff !important; /* Изначально чистые белые буквы */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease !important;
+}
+
+.nav-links a:hover,
+.nav-links a:active,
+.nav-links a.active {
+    color: #39ff14 !important; /* Насыщенный неоновый зеленый */
+    text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14 !important; /* Сочное свечение */
+}
      .lang-container {
     position: relative !important;
     display: inline-block !important;
