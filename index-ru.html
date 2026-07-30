@@ -203,26 +203,26 @@
         </nav>
     </header>
 
-    <main class="hero" style="display: grid !important; grid-template-columns: 200px 1fr; gap: 40px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 40px 20px; position: relative; box-sizing: border-box;">
+   [30.07.2026 16:15] Vladimir: <main class="hero" style="display: grid !important; grid-template-columns: 180px 1fr; gap: 50px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 40px 20px; box-sizing: border-box; align-items: flex-start;">
 
-  <!-- ЛЕВАЯ КОЛОНКА: Свечи плавно уходят по диагонали вниз -->
+    <!-- ЛЕВАЯ КОЛОНКА: Свечи плавно уходят по диагонали вниз -->
     <div style="display: flex; align-items: flex-start; gap: 8px; padding-top: 20px;">
         
-       <!-- Свеча 1 (Зеленая, падает сверху: длинный фитиль сверху) -->
-<div style="display: flex; flex-direction: column; align-items: center; margin-top: 0px;">
-    <div style="width: 2px; height: 25px; background: #00ff88;"></div> <!-- Длинный верхний фитиль -->
-    <div style="width: 12px; height: 35px; background: #00ff88; box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);"></div>
-    <div style="width: 2px; height: 5px; background: #00ff88;"></div>  <!-- Короткий нижний фитиль -->
-</div>
+        <!-- Свеча 1 (Зеленая) -->
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 0px;">
+            <div style="width: 2px; height: 15px; background: #00ff88;"></div>
+            <div style="width: 12px; height: 35px; background: #00ff88; box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);"></div>
+            <div style="width: 2px; height: 10px; background: #00ff88;"></div>
+        </div>
 
-        <!-- Свеча 2 (Зеленая, продолжает движение вниз) -->
-<div style="display: flex; flex-direction: column; align-items: center; margin-top: 35px;">
-    <div style="width: 2px; height: 20px; background: #00ff88;"></div> <!-- Верхний фитиль -->
-    <div style="width: 12px; height: 45px; background: #00ff88; box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);"></div>
-    <div style="width: 2px; height: 10px; background: #00ff88;"></div> <!-- Нижний фитиль -->
-</div>
+        <!-- Свеча 2 (Зеленая, уходит ниже) -->
+        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 40px;">
+            <div style="width: 2px; height: 20px; background: #00ff88;"></div>
+            <div style="width: 12px; height: 45px; background: #00ff88; box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);"></div>
+            <div style="width: 2px; height: 15px; background: #00ff88;"></div>
+        </div>
 
-        <!-- Свеча 3 (Красная, уходит еще ниже) -->
+        <!-- Свеча 3 (Красная, продолжает спуск) -->
         <div style="display: flex; flex-direction: column; align-items: center; margin-top: 85px;">
             <div style="width: 2px; height: 15px; background: #ff3366;"></div>
             <div style="width: 12px; height: 40px; background: #ff3366; box-shadow: 0 0 15px rgba(255, 51, 102, 0.8);"></div>
@@ -250,26 +250,27 @@
             <div style="width: 2px; height: 10px; background: #ff3366;"></div>
         </div>
 
-        <!-- Свеча 7 (Красная, самая нижняя) -->
+        <!-- Свеча 7 (Красная) -->
         <div style="display: flex; flex-direction: column; align-items: center; margin-top: 260px;">
             <div style="width: 2px; height: 10px; background: #ff3366;"></div>
             <div style="width: 12px; height: 40px; background: #ff3366; box-shadow: 0 0 15px rgba(255, 51, 102, 0.8);"></div>
             <div style="width: 2px; height: 20px; background: #ff3366;"></div>
         </div>
     </div>
-    <!-- ПРАВАЯ КОЛОНКА: Свободный текст, кнопки и карточки на своих местах -->
-    <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
+
+    <!-- ПРАВАЯ КОЛОНКА: Свободный текст, кнопки под ним -->
+    <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-start;">
         
-        <h1 style="text-align: left !important; margin: 0 0 15px 0; font-size: 2.8rem; font-weight: bold; line-height: 1.3; width: 100%;">
+        <h1 style="text-align: left !important; margin: 0 0 15px 0; font-size: 2.8rem; font-weight: bold; line-height: 1.3;">
             Торгуйте умнее.<br>
             <span style="background: linear-gradient(135deg, #007aff, #39ff14); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Стройте свое будущее.</span>
         </h1>
-       <p style="text-align: left !important; max-width: 600px; color: rgba(255,255,255,0.7); margin-bottom: 30px; font-size: 1.1rem; line-height: 1.5; width: 100%;">
+[30.07.2026 16:15] Vladimir: <p style="text-align: left !important; max-width: 600px; color: rgba(255,255,255,0.7); margin-bottom: 30px; font-size: 1.1rem; line-height: 1.5;">
             Обучение на основе ИИ, профессиональный анализ рынка и автоматизированный трейдинг для Forex, криптовалют и акций.
         </p>
 
-        <!-- Кнопки управления под текстом -->
-        <div style="display: flex !important; gap: 15px !important; margin-bottom: 40px;">
+        <!-- Кнопки управления -->
+        <div style="display: flex !important; gap: 15px !important; margin-bottom: 20px;">
             <a href="academy.html" style="background: #39ff14 !important; color: #000; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold;">Academy</a>
             <a href="ai-assistant.html" style="background: rgba(255,255,255,0.1) !important; color: #fff; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 1px solid rgba(255,255,255,0.2);">AI Assistant</a>
         </div>
@@ -277,7 +278,8 @@
     </div>
 
 </main>
-   <!-- CSS Анимация пульсации для свечей (вставить прямо в HTML) -->
+
+<!-- CSS Анимация пульсации и эффекты подсветки -->
 <style>
 @keyframes candlePulse {
     0% { transform: scaleY(1); filter: brightness(1); }
@@ -285,7 +287,7 @@
     100% { transform: scaleY(1); filter: brightness(1); }
 }
 
-/* Эффект подсветки кнопок */
+/* Эффект подсветки кнопок при наведении */
 a[href="academy.html"], a[href="ai-assistant.html"] {
     transition: all 0.3s ease !important;
 }
@@ -298,7 +300,6 @@ a[href="ai-assistant.html"]:hover {
     box-shadow: 0 0 20px rgba(0, 122, 255, 0.7) !important;
 }
 </style>
-  
  
         <!-- Единственный блок нижних карточек в один ряд (Бирюзовое свечение) -->
     <div class="cards-grid" style="display: flex !important; flex-wrap: nowrap !important; flex-direction: row !important; justify-content: center !important; gap: 15px !important; margin: 80px auto 40px auto !important; padding: 0 20px !important; max-width: 1000px !important; width: 100% !important; box-sizing: border-box !important;">
