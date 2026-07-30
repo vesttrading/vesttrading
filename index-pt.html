@@ -44,9 +44,13 @@
 }
 .lang-options {
     position: absolute;
-    right: 20px !important; /* Принудительно сдвигает меню к правому краю экрана */
+    right: 0 !important;
     left: auto !important;
-    width: max-content !important;
+    width: 70px !important;       /* Жёстко ограничиваем ширину, чтобы обрезать край */
+    min-width: 70px !important;   /* Не даём блоку растягиваться */
+    padding: 10px 0 !important;   /* Оставляем отступы только сверху и снизу */
+    text-align: center !important;/* Выравниваем буквы ровно по центру плашки */
+}
 }
 .lang-options a:hover {
     color: var(--primary-green) !important;
