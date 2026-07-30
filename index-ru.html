@@ -205,51 +205,77 @@
 
        <main class="hero" style="display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: space-between !important; max-width: 1100px !important; margin: 40px auto 0 auto !important; padding: 20px !important; width: 100% !important; box-sizing: border-box !important; gap: 40px !important; flex-wrap: wrap !important;">
     
-    <!-- ЛЕВАЯ КОЛОНКА: ИНТЕРАКТИВНЫЕ ЯПОНСКИЕ СВЕЧИ -->
-    <div style="flex: 1 !important; min-width: 320px !important; height: 280px !important; background: rgba(2, 8, 19, 0.4) !important; border: 1px solid rgba(255, 255, 255, 0.05) !important; border-radius: 16px !important; backdrop-filter: blur(10px) !important; position: relative !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important; box-shadow: inset 0 0 30px rgba(0,0,0,0.5) !important;">
-        <!-- Сетка графика -->
-        <div style="position: absolute; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 20px 20px; top:0; left:0;"></div>
+        <!-- ЛЕВАЯ КОЛОНКА: ИДЕНТИЧНЫЙ РИСУНОК СВЕЧЕЙ КАК НА КАРТИНЕ -->
+    <div style="flex: 1 !important; min-width: 320px !important; height: 280px !important; background: #020813 !important; border: 1px solid rgba(255, 255, 255, 0.05) !important; border-radius: 16px !important; position: relative !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important; box-shadow: inset 0 0 30px rgba(0,0,0,0.8) !important;">
         
-        <!-- Контейнер для свечей -->
-        <div style="display: flex; align-items: center; gap: 14px; position: relative; z-index: 2; height: 100%; padding: 0 20px;">
-            <!-- Свеча 1 (Зеленая растущая) -->
-            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: 20px; animation: candlePulse 3s infinite ease-in-out;">
-                <div style="width: 2px; height: 30px; background: #39ff14; box-shadow: 0 0 10px #39ff14;"></div>
-                <div style="width: 14px; height: 70px; background: rgba(57, 255, 20, 0.2); border: 2px solid #39ff14; border-radius: 3px; box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);"></div>
-                <div style="width: 2px; height: 25px; background: #39ff14; box-shadow: 0 0 10px #39ff14;"></div>
+        <!-- Фоновая сетка графика -->
+        <div style="position: absolute; width: 100%; height: 100%; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 24px 24px; top:0; left:0; opacity: 0.7;"></div>
+        
+        <!-- Скользящие средние линии (как на фоне реального графика на картине) -->
+        <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;" viewBox="0 0 400 280" preserveAspectRatio="none">
+            <path d="M 20 220 Q 90 60 160 130 T 320 260" fill="none" stroke="rgba(0, 242, 254, 0.15)" stroke-width="2" />
+            <path d="M 20 200 Q 90 80 160 150 T 320 240" fill="none" stroke="rgba(139, 92, 246, 0.1)" stroke-width="1.5" />
+        </svg>
+
+        <!-- Контейнер для точного рисунка свечей -->
+        <div style="display: flex; align-items: center; gap: 11px; position: relative; z-index: 2; height: 100%; padding: 0 15px; width: 100%; justify-content: space-around;">
+            
+            <!-- Свеча 1 (Зеленая, старт внизу) -->
+            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: 50px; animation: candlePulse 4s infinite ease-in-out;">
+                <div style="width: 2px; height: 20px; background: #39ff14; box-shadow: 0 0 8px #39ff14;"></div>
+                <div style="width: 12px; height: 45px; background: #39ff14 !important; border-radius: 2px; box-shadow: 0 0 15px rgba(57, 255, 20, 0.6) !important;"></div>
+                <div style="width: 2px; height: 15px; background: #39ff14; box-shadow: 0 0 8px #39ff14;"></div>
             </div>
-            <!-- Свеча 2 (Красная падающая) -->
-            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: -10px; animation: candlePulse 3s infinite ease-in-out; animation-delay: 0.5s;">
-                <div style="width: 2px; height: 20px; background: #ff3131; box-shadow: 0 0 10px #ff3131;"></div>
-                <div style="width: 14px; height: 90px; background: rgba(255, 49, 49, 0.2); border: 2px solid #ff3131; border-radius: 3px; box-shadow: 0 0 15px rgba(255, 49, 49, 0.4);"></div>
-                <div style="width: 2px; height: 40px; background: #ff3131; box-shadow: 0 0 10px #ff3131;"></div>
+            
+            <!-- Свеча 2 (Зеленая, мощный импульс вверх) -->
+            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: 10px; animation: candlePulse 4s infinite ease-in-out; animation-delay: 0.3s;">
+                <div style="width: 2px; height: 25px; background: #39ff14; box-shadow: 0 0 8px #39ff14;"></div>
+                <div style="width: 12px; height: 75px; background: #39ff14 !important; border-radius: 2px; box-shadow: 0 0 20px rgba(57, 255, 20, 0.7) !important;"></div>
+                <div style="width: 2px; height: 20px; background: #39ff14; box-shadow: 0 0 8px #39ff14;"></div>
             </div>
-            <!-- Свеча 3 (Зеленая растущая импульсная) -->
-            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: -40px; animation: candlePulse 3s infinite ease-in-out; animation-delay: 1s;">
-                <div style="width: 2px; height: 45px; background: #39ff14; box-shadow: 0 0 10px #39ff14;"></div>
-                <div style="width: 14px; height: 110px; background: rgba(57, 255, 20, 0.2); border: 2px solid #39ff14; border-radius: 3px; box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);"></div>
-                <div style="width: 2px; height: 30px; background: #39ff14; box-shadow: 0 0 10px #39ff14;"></div>
+            
+            <!-- Свеча 3 (Красная, разворот на пике) -->
+            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: -15px; animation: candlePulse 4s infinite ease-in-out; animation-delay: 0.6s;">
+                <div style="width: 2px; height: 35px; background: #ff3131; box-shadow: 0 0 8px #ff3131;"></div>
+                <div style="width: 12px; height: 35px; background: #ff3131 !important; border-radius: 2px; box-shadow: 0 0 15px rgba(255, 49, 49, 0.6) !important;"></div>
+                <div style="width: 2px; height: 25px; background: #ff3131; box-shadow: 0 0 8px #ff3131;"></div>
             </div>
-            <!-- Свеча 4 (Красная маленькая) -->
-            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: -20px; animation: candlePulse 3s infinite ease-in-out; animation-delay: 1.5s;">
-                <div style="width: 2px; height: 25px; background: #ff3131; box-shadow: 0 0 10px #ff3131;"></div>
-                <div style="width: 14px; height: 40px; background: rgba(255, 49, 49, 0.2); border: 2px solid #ff3131; border-radius: 3px; box-shadow: 0 0 15px rgba(255, 49, 49, 0.4);"></div>
-                <div style="width: 2px; height: 20px; background: #ff3131; box-shadow: 0 0 10px #ff3131;"></div>
+            
+            <!-- Свеча 4 (Зеленая, попытка фиксации) -->
+            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: -10px; animation: candlePulse 4s infinite ease-in-out; animation-delay: 0.9s;">
+                <div style="width: 2px; height: 20px; background: #39ff14; box-shadow: 0 0 8px #39ff14;"></div>
+                <div style="width: 12px; height: 40px; background: #39ff14 !important; border-radius: 2px; box-shadow: 0 0 15px rgba(57, 255, 20, 0.6) !important;"></div>
+                <div style="width: 2px; height: 15px; background: #39ff14; box-shadow: 0 0 8px #39ff14;"></div>
             </div>
-            <!-- Свеча 5 (Зеленая финальная) -->
-            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: -50px; animation: candlePulse 3s infinite ease-in-out; animation-delay: 2s;">
-                <div style="width: 2px; height: 35px; background: #39ff14; box-shadow: 0 0 10px #39ff14;"></div>
-                <div style="width: 14px; height: 80px; background: rgba(57, 255, 20, 0.2); border: 2px solid #39ff14; border-radius: 3px; box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);"></div>
-                <div style="width: 2px; height: 25px; background: #39ff14; box-shadow: 0 0 10px #39ff14;"></div>
+            
+            <!-- Свеча 5 (Красная, начало падения) -->
+            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: 15px; animation: candlePulse 4s infinite ease-in-out; animation-delay: 1.2s;">
+                <div style="width: 2px; height: 15px; background: #ff3131; box-shadow: 0 0 8px #ff3131;"></div>
+                <div style="width: 12px; height: 60px; background: #ff3131 !important; border-radius: 2px; box-shadow: 0 0 15px rgba(255, 49, 49, 0.6) !important;"></div>
+                <div style="width: 2px; height: 30px; background: #ff3131; box-shadow: 0 0 8px #ff3131;"></div>
             </div>
+
+            <!-- Свеча 6 (Красная, длинное сильное падение) -->
+            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: 55px; animation: candlePulse 4s infinite ease-in-out; animation-delay: 1.5s;">
+                <div style="width: 2px; height: 30px; background: #ff3131; box-shadow: 0 0 8px #ff3131;"></div>
+                <div style="width: 12px; height: 85px; background: #ff3131 !important; border-radius: 2px; box-shadow: 0 0 20px rgba(255, 49, 49, 0.7) !important;"></div>
+                <div style="width: 2px; height: 20px; background: #ff3131; box-shadow: 0 0 8px #ff3131;"></div>
+            </div>
+
+            <!-- Свеча 7 (Красная, финальный слив в самый низ) -->
+            <div style="display: flex; flex-direction: column; align-items: center; position: relative; top: 85px; animation: candlePulse 4s infinite ease-in-out; animation-delay: 1.8s;">
+                <div style="width: 2px; height: 15px; background: #ff3131; box-shadow: 0 0 8px #ff3131;"></div>
+                <div style="width: 12px; height: 50px; background: #ff3131 !important; border-radius: 2px; box-shadow: 0 0 15px rgba(255, 49, 49, 0.6) !important;"></div>
+                <div style="width: 2px; height: 35px; background: #ff3131; box-shadow: 0 0 8px #ff3131;"></div>
+            </div>
+            
         </div>
         
-        <!-- Индикатор цены справа (Линия) -->
-        <div style="position: absolute; right: 0; top: 30%; width: 100%; height: 1px; border-top: 1px dashed rgba(0, 242, 254, 0.4); z-index: 1;">
-            <span style="position: absolute; right: 10px; top: -10px; background: #00f2fe; color: #020813; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; box-shadow: 0 0 10px #00f2fe;">LIVE</span>
+        <!-- Линия текущей цены LIVE (как на картине) -->
+        <div style="position: absolute; right: 0; top: 75%; width: 100%; height: 1px; border-top: 1px dashed rgba(57, 255, 20, 0.3); z-index: 1;">
+            <span style="position: absolute; left: 15px; top: -10px; background: #39ff14; color: #020813; font-size: 9px; font-weight: bold; padding: 1px 5px; border-radius: 3px; box-shadow: 0 0 10px #39ff14; letter-spacing: 0.5px;">LIVE</span>
         </div>
     </div>
-
     <!-- ПРАВАЯ КОЛОНКА: СТИЛЬНЫЙ ТЕКСТ -->
     <div style="flex: 1 !important; min-width: 320px !important; text-align: left !important; display: flex !important; flex-direction: column !important; justify-content: center !important;">
         <h1 style="text-align: left !important; width: 100% !important; display: block !important; margin-bottom: 12px !important; color: #ffffff !important; font-size: 40px !important; font-weight: 800 !important; letter-spacing: -0.5px !important; line-height: 1.2 !important;">
