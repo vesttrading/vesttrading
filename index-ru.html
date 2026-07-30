@@ -36,6 +36,62 @@
     position: relative !important;
     display: inline-block !important;
 }
+     /* Делаем нижний ряд карточек компактным */
+.cards-grid {
+    display: flex !important;
+    flex-direction: row !important; /* Строго в один горизонтальный ряд */
+    justify-content: center !important;
+    gap: 15px !important; /* Уменьшили расстояние между карточками */
+    margin: 40px auto 0 auto !important; /* Отодвинули их пониже от главного текста */
+    padding: 0 20px !important;
+    max-width: 900px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Уменьшаем размеры самих карточек */
+.cards-grid .card {
+    flex: 1 !important;
+    min-width: 180px !important; /* Сделали их уже */
+    max-width: 260px !important; /* Сделали компактнее */
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 15px !important; /* Уменьшили внутренние поля, чтобы убрать пустоту */
+    border-radius: 12px !important;
+    text-align: center !important; /* Текст внутри карточек теперь ровно по центру */
+    transition: all 0.3s ease !important;
+}
+
+/* Уменьшаем шрифты внутри карточек */
+.cards-grid .card h3 {
+    font-size: 16px !important; /* Компактный и аккуратный заголовок */
+    margin: 0 0 8px 0 !important;
+    color: #ffffff !important;
+}
+
+.cards-grid .card p {
+    font-size: 13px !important; /* Компактный текст описания */
+    color: rgba(255, 255, 255, 0.6) !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+/* ДОБАВЛЯЕМ ЦВЕТНОЕ НЕОНОВОЕ СВЕЧЕНИЕ ПРИ НАВЕДЕНИИ */
+/* 1-я карточка: Бирюзовое */
+.cards-grid .card:nth-of-type(1):hover {
+    border-color: #00f2fe !important;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.3) !important;
+}
+/* 2-я карточка: Синее */
+.cards-grid .card:nth-of-type(2):hover {
+    border-color: #4facfe !important;
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.3) !important;
+}
+/* 3-я карточка: Фиолетовое */
+.cards-grid .card:nth-of-type(3):hover {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3) !important;
+}
 
 /* 1. ГЛОБУС СТАНОВИТСЯ СИНИМ */
 .globe-icon {
