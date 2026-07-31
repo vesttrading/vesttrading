@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VestTrading - Plataforma Global de Inversiones</title>
+    <title>VestTrading</title>
     <style>
         :root {
             --bg-dark: #0b1120;
@@ -47,8 +47,6 @@
         .nav-links a:hover, .nav-links a.active {
             color: #ffffff !important;
         }
-        
-        /* Стили для переключателя языков */
         .lang-dropdown {
             position: relative;
             display: inline-block;
@@ -63,7 +61,6 @@
             align-items: center;
             gap: 5px;
             padding: 5px 10px;
-            transition: color 0.2s ease;
         }
         .lang-options {
             display: none;
@@ -73,7 +70,6 @@
             border-radius: 6px;
             right: -15px !important;
             min-width: 55px !important;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5);
             z-index: 100;
         }
         .lang-options a {
@@ -84,7 +80,6 @@
             text-align: center !important;
             font-size: 0.9rem;
             background: none !important;
-            transition: color 0.2s ease;
         }
         .lang-options a:hover {
             background: none !important;
@@ -96,8 +91,6 @@
         .lang-dropdown:hover .lang-btn, .lang-btn:hover {
             color: var(--primary-green) !important;
         }
-
-        /* Главный экран */
         .hero {
             text-align: center;
             padding: 80px 20px 40px;
@@ -127,8 +120,6 @@
             margin-top: 15px !important;
             line-height: 1.5;
         }
-
-        /* Блок контактов */
         .contacts-grid {
             display: flex;
             justify-content: center;
@@ -147,7 +138,7 @@
             text-align: center;
             text-decoration: none;
             color: white;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.2s ease;
         }
         .contact-card:hover {
             transform: translateY(-5px);
@@ -172,28 +163,22 @@
 <body>
 
     <header>
-        <a href="index-es.html" class="logo">Vest<span>Trading</span></a>
+        <a href="index.html" class="logo">Vest<span>Trading</span></a>
         <div class="nav-links">
-            <a href="index-es.html" class="active">Inicio</a>
+            <a href="index.html">Inicio</a>
             <a href="academy-ru.html">Academia</a>
-            <a href="#">Herramientas</a>
+            <a href="#">Herramientas IA</a>
             <a href="#">Forex</a>
             <a href="#">Crypto</a>
-            <a href="#">Contacto</a>
+            <a href="#">Contactos</a>
             <a href="#">Perfil</a>
             
-            <!-- Переключатель языков -->
             <div class="lang-dropdown">
-                <button class="lang-btn">
-                    <span class="globe-icon">🌐</span> Es
-                </button>
+                <button class="lang-btn">🌐 Es</button>
                 <div class="lang-options">
-                    <a href="index.html">En</a>
-                    <a href="index-ru.html">Ru</a>
+                    <a href="index-en.html">En</a>
+                    <a href="index.html">Ru</a>
                     <a href="index-es.html">Es</a>
-                    <a href="index-pt.html">Pt</a>
-                    <a href="index-fr.html">Fr</a>
-                    <a href="index-ar.html">Ar</a>
                 </div>
             </div>
         </div>
@@ -201,10 +186,9 @@
 
     <main class="hero">
         <h1>Opere de manera más inteligente.<br><span>Construya su futuro.</span></h1>
-        <p class="description">Educación basada en IA, análisis de mercado profesional и trading automatizado para Forex, Crypto y acciones.</p>
+        <p class="description">Educación basada en IA, análisis de mercado profesional y trading automatizado para Forex, криптовалют и акций.</p>
     </main>
 
-    <!-- Блок контактов как на русском -->
     <section class="contacts-grid">
         <a href="mailto:support@vesttrading.com" class="contact-card">
             <div class="contact-icon">✉</div>
@@ -221,10 +205,10 @@
             <h3>Horario de trabajo</h3>
             <p>24/7 En línea</p>
         </a>
-        <a href="https://wa.me" target="_blank" class="contact-card">
+        <a href="#" class="contact-card">
             <div class="contact-icon">💬</div>
             <h3>WhatsApp</h3>
-            <p>Contactar en chat</p>
+            <p>Связаться в чате</p>
         </a>
     </section>
 
