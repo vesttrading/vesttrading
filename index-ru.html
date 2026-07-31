@@ -205,58 +205,52 @@
 
    <main class="hero" style="display: grid !important; grid-template-columns: 240px 1fr; gap: 80px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 40px 20px 40px 60px; box-sizing: border-box; align-items: flex-start;">
 
-   <!-- ЛЕВАЯ КОЛОНКА: Свечи выстроены горкой (буквой Л) -->
-   <div style="display: flex; align-items: flex-start; gap: 8px; padding-top: 20px; margin-top: -40px;">
-        
-        <!-- Свеча 1 (Зеленая) - Начало подъема горки -->
-        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 130px;">
-            <div style="width: 2px; height: 20px; background: #00ff88;"></div>
-            <div style="width: 12px; height: 45px; background: #00ff88; box-shadow: 0 0 15px #00ff88;"></div>
-            <div style="width: 2px; height: 15px; background: #00ff88;"></div>
-        </div>
+ <!-- Контейнер для графика с фиксированной высотой, чтобы не давить на кнопки -->
+ <div style="display: flex; align-items: flex-end; gap: 6px; height: 110px; margin-bottom: 25px;">
 
-        <!-- Свеча 2 (Зеленая) - САМЫЙ ПИК ГОРКИ -->
-        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 95px;">
-            <div style="width: 2px; height: 20px; background: #00ff88;"></div>
-            <div style="width: 12px; height: 45px; background: #00ff88; box-shadow: 0 0 15px #00ff88;"></div>
-            <div style="width: 2px; height: 15px; background: #00ff88;"></div>
-        </div>
-
-        <!-- Свеча 3 (Красная) — Начало спуска с горки -->
-        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 45px;">
-            <div style="width: 2px; height: 15px; background: #ff3366;"></div>
-            <div style="width: 12px; height: 45px; background: #ff3366; box-shadow: 0 0 15px rgba(255, 51, 102, 0.8);"></div>
-            <div style="width: 2px; height: 20px; background: #ff3366;"></div>
-        </div>
-
-        <!-- Свеча 4 (Красная) — Спуск ниже -->
-        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 85px;">
-            <div style="width: 2px; height: 20px; background: #ff3366;"></div>
-            <div style="width: 12px; height: 50px; background: #ff3366; box-shadow: 0 0 15px rgba(255, 51, 102, 0.8);"></div>
-            <div style="width: 2px; height: 15px; background: #ff3366;"></div>
-        </div>
-
-        <!-- Свеча 5 (Красная) -->
-        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 130px;">
-            <div style="width: 2px; height: 15px; background: #ff3366;"></div>
-            <div style="width: 12px; height: 45px; background: #ff3366; box-shadow: 0 0 15px rgba(255, 51, 102, 0.8);"></div>
-            <div style="width: 2px; height: 15px; background: #ff3366;"></div>
-        </div>
-
-        <!-- Свеча 6 (Красная) -->
-        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 170px;">
-            <div style="width: 2px; height: 25px; background: #ff3366;"></div>
-            <div style="width: 12px; height: 55px; background: #ff3366; box-shadow: 0 0 15px rgba(255, 51, 102, 0.8);"></div>
-            <div style="width: 2px; height: 10px; background: #ff3366;"></div>
-        </div>
-
-        <!-- Свеча 7 (Красная) — Самый низ графика -->
-        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 215px;">
-            <div style="width: 2px; height: 10px; background: #ff3366;"></div>
-            <div style="width: 12px; height: 40px; background: #ff3366; box-shadow: 0 0 15px rgba(255, 51, 102, 0.8);"></div>
-            <div style="width: 2px; height: 20px; background: #ff3366;"></div>
-        </div>
+    <!-- Свеча 1 (Зеленая) - Левое крыло взлетает -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 35px;">
+        <div style="width: 2px; height: 10px; background: #00ff88;"></div>
+        <div style="width: 8px; height: 25px; background: #00ff88; box-shadow: 0 0 10px #00ff88;"></div>
+        <div style="width: 2px; height: 8px; background: #00ff88;"></div>
     </div>
+
+    <!-- Свеча 2 (Зеленая) -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+        <div style="width: 2px; height: 10px; background: #00ff88;"></div>
+        <div style="width: 8px; height: 25px; background: #00ff88; box-shadow: 0 0 10px #00ff88;"></div>
+        <div style="width: 2px; height: 8px; background: #00ff88;"></div>
+    </div>
+
+    <!-- Свеча 3 (Красная) - Самый низ (впадина) -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 0px;">
+        <div style="width: 2px; height: 10px; background: #ff3366;"></div>
+        <div style="width: 8px; height: 25px; background: #ff3366; box-shadow: 0 0 10px #ff3366;"></div>
+        <div style="width: 2px; height: 8px; background: #ff3366;"></div>
+    </div>
+
+    <!-- Свеча 4 (Красная) -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 12px;">
+        <div style="width: 2px; height: 10px; background: #ff3366;"></div>
+        <div style="width: 8px; height: 25px; background: #ff3366; box-shadow: 0 0 10px #ff3366;"></div>
+        <div style="width: 2px; height: 8px; background: #ff3366;"></div>
+    </div>
+
+    <!-- Свеча 5 (Красная) -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 27px;">
+        <div style="width: 2px; height: 10px; background: #ff3366;"></div>
+        <div style="width: 8px; height: 25px; background: #ff3366; box-shadow: 0 0 10px #ff3366;"></div>
+        <div style="width: 2px; height: 8px; background: #ff3366;"></div>
+    </div>
+
+    <!-- Свеча 6 (Красная) - Правое крыло взлетает -->
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 45px;">
+        <div style="width: 2px; height: 10px; background: #ff3366;"></div>
+        <div style="width: 8px; height: 25px; background: #ff3366; box-shadow: 0 0 10px #ff3366;"></div>
+        <div style="width: 2px; height: 8px; background: #ff3366;"></div>
+    </div>
+
+</div>
   <!-- ПРАВАЯ КОЛОНКА: Блок текста, приподнятый выше -->
   <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-start; margin-top: -30px;">
     
