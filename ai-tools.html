@@ -172,13 +172,39 @@
     </div>
     </div>
 
-    <div style="max-width: 380px; margin: 25px auto; padding: 15px; background: rgba(0, 0, 0, 0.2); border-radius: 8px; text-align: center; border: 1px solid rgba(0, 123, 255, 0.4); box-shadow: 0 0 15px rgba(0, 123, 255, 0.25);">
-    <h2 style="color: #ffffff; margin-bottom: 4px; font-size: 1.1rem !important; line-height: 1.1 !important;"><i class="fas fa-robot"></i> AI Signal Generator</h2>
-    <p style="color: var(--text-muted); margin-bottom: 12px; font-size: 0.75rem !important; line-height: 1.25 !important;">Select an asset class to run a predictive neural network market scan.</p>
+    <div style="max-width: 340px; margin: 10px auto 25px auto; padding: 10px 15px 15px 15px; background: rgba(0, 0, 0, 0.2); border-radius: 8px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.1);">
+    <style>
+        .ai-gen-btn {
+            background: rgba(255, 255, 255, 0.05); 
+            color: #ffffff; 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            padding: 6px 12px; 
+            border-radius: 4px; 
+            font-size: 0.8rem !important; 
+            font-weight: 500; 
+            cursor: pointer; 
+            transition: all 0.2s ease;
+        }
+        .ai-gen-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(0, 123, 255, 0.5);
+        }
+        /* Эффект свечения при нажатии (клике) и удержании фокуса */
+        .ai-gen-btn:focus, .ai-gen-btn:active {
+            outline: none;
+            background: rgba(0, 123, 255, 0.15) !important;
+            border-color: #007bff !important;
+            box-shadow: 0 0 12px rgba(0, 123, 255, 0.6) !important;
+            color: #ffffff !important;
+        }
+    </style>
+
+    <h2 style="color: #ffffff; margin-bottom: 2px; font-size: 1.05rem !important; line-height: 1.1 !important;"><i class="fas fa-robot"></i> AI Signal Generator</h2>
+    <p style="color: var(--text-muted); margin-bottom: 10px; font-size: 0.72rem !important; line-height: 1.2 !important;">Select an asset class to run a predictive neural network market scan.</p>
     
     <div style="display: flex !important; justify-content: center !important; gap: 8px; width: 100%;">
-        <button onclick="generateSignal('EUR/USD')" style="background: rgba(255, 255, 255, 0.05); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.1); padding: 6px 12px; border-radius: 4px; font-size: 0.8rem !important; font-weight: 500; cursor: pointer; transition: 0.2s;">Forex (EUR/USD)</button>
-        <button onclick="generateSignal('BTC/USDT')" style="background: rgba(255, 255, 255, 0.05); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.1); padding: 6px 12px; border-radius: 4px; font-size: 0.8rem !important; font-weight: 500; cursor: pointer; transition: 0.2s;">Crypto (BTC/USDT)</button>
+        <button class="ai-gen-btn" onclick="generateSignal('EUR/USD')">Forex (EUR/USD)</button>
+        <button class="ai-gen-btn" onclick="generateSignal('BTC/USDT')">Crypto (BTC/USDT)</button>
     </div>
 </div>
 
