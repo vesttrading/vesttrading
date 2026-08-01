@@ -173,27 +173,25 @@
     <p style="color: rgba(255,255,255,0.6) !important; margin: 0 !important; line-height: 1.3 !important; font-size: 0.75rem !important;">Natural language processing models aggregating financial news.</p>
   </div>
 
-  <!-- 4. AI Signal Generator -->
-  <div class="ai-card" style="flex: 1 !important; width: 23% !important; max-width: 24% !important; padding: 15px !important; height: auto !important; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between;">
-    <div>
-      <div class="tool-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-        <span style="font-weight: 600; font-size: 0.9rem; color: #fff;"><i class="fas fa-signal"></i> Signals</span>
-        <span class="badge" style="font-size: 0.65rem; padding: 2px 5px; background: #00ff88; color: #000;">Live</span>
-      </div>
-      <p style="color: rgba(255,255,255,0.6) !important; margin: 0 0 10px 0 !important; line-height: 1.3 !important; font-size: 0.75rem !important;">Select asset class to run market scanning.</p>
+  <!-- Карточка 4: Signals -->
+        <div class="ai-card" style="flex: 1; min-width: 200px; background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-weight: bold; color: #ffffff;">Signals</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Select asset class to run market scanning.</p>
+        </div>
     </div>
-   </div>
-  </div>
-    
-   
-  <div style="max-width: 600px; margin: 50px auto; padding: 40px; background: rgba(0, 0, 0, 0.2); border-radius: 8px;">
-    <h2 style="color: #ffffff; margin-bottom: 15px;"><i class="fas fa-robot"></i> AI Signal Generator</h2>
-    <p style="color: var(--text-muted); margin-bottom: 25px;">Select an asset class to run a predictive neural network market scan.</p>
-    
-    <div style="display: flex !important; justify-content: center !important; width: 100%;">
-        <button onclick="generateSignal('EUR/USD')" style="background: rgba(255, 255, 255, 0.05); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 4px; font-weight: 500; cursor: pointer; transition: 0.2s;">Generate Signal</button>
+
+    <!-- Блок AI Signal Generator внизу -->
+    <div style="max-width: 600px; margin: 50px auto; padding: 40px; background: rgba(0, 0, 0, 0.2); border-radius: 8px;">
+        <h2 style="color: #ffffff; margin-bottom: 15px;"><i class="fas fa-robot"></i> AI Signal Generator</h2>
+        <p style="color: var(--text-muted); margin-bottom: 25px;">Select an asset class to run a predictive neural network market scan.</p>
+        
+        <div style="display: flex !important; justify-content: center !important; gap: 15px; width: 100%;">
+            <button onclick="generateSignal('EUR/USD')" style="background: rgba(255, 255, 255, 0.05); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 4px; font-weight: 500; cursor: pointer; transition: 0.2s;">Generate Signal</button>
+            <button style="background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.3); padding: 10px 20px; border-radius: 4px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px;">Signal <span style="background: #00ff88; color: #000000; font-size: 0.65rem; padding: 1px 4px; border-radius: 3px; text-transform: uppercase;">Live</span></button>
+        </div>
     </div>
-</div>
         <div id="ai-loading" style="display: none; color: #a855f7; margin: 20px 0;"><i class="fas fa-spinner fa-spin"></i> Processing market data streams...</div>
 
         <div id="ai-result" style="display: none; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; text-align: left; border-left: 4px solid var(--primary-green);">
