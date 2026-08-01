@@ -186,12 +186,13 @@
   </div>
     
    
-<div style="max-width: 600px; margin: 50px auto; padding: 40px; background: rgba(0, 0, 0, 0.2); border-radius: 8px;">
+ <div style="max-width: 600px; margin: 50px auto; padding: 40px; background: rgba(0, 0, 0, 0.2); border-radius: 8px;">
     <h2 style="color: #ffffff; margin-bottom: 15px;"><i class="fas fa-robot"></i> AI Signal Generator</h2>
     <p style="color: var(--text-muted); margin-bottom: 25px;">Select an asset class to run a predictive neural network market scan.</p>
     
-    <div style="display: flex !important; justify-content: center !important;">
-        <button onclick="generateSignal('EUR/USD')" style="background: rgba(255, 255, 255, 0.05); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 4px; cursor: pointer;">Generate Signal</button>
+    <div style="display: flex !important; justify-content: center !important; gap: 15px; width: 100%;">
+        <button onclick="generateSignal('EUR/USD')" style="background: rgba(255, 255, 255, 0.05); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 4px; font-weight: 500; cursor: pointer; transition: 0.2s;">Generate Signal</button>
+        <button style="background: rgba(0, 255, 136, 0.1); color: #00ff88; border: 1px solid rgba(0, 255, 136, 0.3); padding: 10px 20px; border-radius: 4px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px;">Signal <span style="background: #00ff88; color: #000000; font-size: 0.65rem; padding: 1px 4px; border-radius: 3px; text-transform: uppercase;">Live</span></button>
     </div>
 </div>
         <div id="ai-loading" style="display: none; color: #a855f7; margin: 20px 0;"><i class="fas fa-spinner fa-spin"></i> Processing market data streams...</div>
