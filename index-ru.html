@@ -190,16 +190,29 @@
                     </span>
                     <span>Ru</span>
                 </div>
-                <div class="lang-dropdown">
-                 <a href="index.html" style="display: block !important; width: 100% !important; text-align: center !important;">En</a>
-                    <a href="index-ru.html" style="display: block !important; width: 100% !important; text-align: center !important;">Ru</a>
-                    <a href="index-es.html" style="display: block !important; width: 100% !important; text-align: center !important;">Es</a>
-                    <a href="index-fr.html" style="display: block !important; width: 100% !important; text-align: center !important;">Fr</a>
-                    <a href="index-ar.html" style="display: block !important; width: 100% !important; text-align: center !important;">Ar</a>
-                    <a href="index-pt.html" style="display: block !important; width: 100% !important; text-align: center !important;">Pt</a>
-                </div>
-            </div>
-        </nav>
+              <!-- Интерактивный глобус с выпадающим меню языков -->
+<div class="lang-container" style="position: relative; display: inline-block;">
+  
+  <div class="lang-selector" style="display: flex !important; align-items: center !important; gap: 6px !important; cursor: pointer;">
+    <span class="globe-icon" style="display: flex; align-items: center;">
+      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+    </span>
+    <span style="display: inline !important;">Ru</span>
+  </div>
+
+  <div class="lang-dropdown">
+    <a href="index.html" style="display: block !important;">Es</a>
+    <a href="index-en.html" style="display: block !important;">En</a>
+    <a href="index-fr.html" style="display: block !important;">Fr</a>
+    <a href="index-ar.html" style="display: block !important;">Ar</a>
+    <a href="index-pt.html" style="display: block !important;">Pt</a>
+  </div>
+
+</div>
     </header>
 
    <main class="hero" style="display: grid !important; grid-template-columns: 240px 1fr; gap: 80px; width: 100%; max-width: 1200px; margin: 0 auto; padding: 40px 20px 40px 60px; box-sizing: border-box; align-items: flex-start;">
