@@ -178,12 +178,14 @@
             background: rgba(255, 255, 255, 0.05); 
             color: #ffffff; 
             border: 1px solid rgba(255, 255, 255, 0.1); 
-            padding: 6px 12px; 
+            padding: 8px 16px; 
             border-radius: 4px; 
             font-size: 0.8rem !important; 
             font-weight: 500; 
             cursor: pointer; 
             transition: all 0.2s ease;
+            width: 180px; /* Фиксированная ширина для одинакового размера */
+            margin: 0 auto; /* Центрирование кнопок в столбике */
         }
         .ai-gen-btn:hover {
             background: rgba(255, 255, 255, 0.1);
@@ -199,9 +201,9 @@
     </style>
 
     <h2 style="color: #ffffff; margin-bottom: 2px; font-size: 1.05rem !important; line-height: 1.1 !important;"><i class="fas fa-robot"></i> AI Signal Generator</h2>
-    <p style="color: var(--text-muted); margin-bottom: 10px; font-size: 0.72rem !important; line-height: 1.2 !important; white-space: nowrap;">Select an asset class to run a predictive neural network market scan.</p>
+    <p style="color: var(--text-muted); margin-bottom: 12px; font-size: 0.72rem !important; line-height: 1.2 !important; white-space: nowrap;">Select an asset class to run a predictive neural network market scan.</p>
     
-    <div style="display: flex !important; justify-content: center !important; gap: 8px; width: 100%;">
+    <div style="display: flex !important; flex-direction: column !important; gap: 8px; width: 100%;">
         <button class="ai-gen-btn" onclick="generateSignal('EUR/USD')">Forex (EUR/USD)</button>
         <button class="ai-gen-btn" onclick="generateSignal('BTC/USDT')">Crypto (BTC/USDT)</button>
     </div>
