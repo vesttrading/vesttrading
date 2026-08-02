@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+[02.08.2026 17:55] Vladimir: <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -59,6 +58,8 @@
             padding: 30px;
             margin-top: 30px;
             text-align: left;
+            display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
@@ -79,45 +80,29 @@
     </header>
 
     <div class="container">
-      <h1><span class="green-text">Predictive</span> <span style="background: linear-gradient(90deg, #00ff66 0%, #ffaa00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Analytics</span></h1>
+        <h1><span class="green-text">Predictive</span> <span style="background: linear-gradient(90deg, #00ff66 0%, #ffaa00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Analytics</span></h1>
         <p>Прогнозный анализ цен на базе нейросетей</p>
         
-      <div class="content-box">
-    <h2 style="color: #00ff66; margin-top: 0;">Графики и сигналы рынка</h2>
-    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
-        Интерактивный технический анализ в реальном времени. Используйте вкладки внутри графика для переключения между парами.
-    </p>
-    
-  <!-- Виджет графика TradingView -->
-<div style="height: 450px; width: 100%; margin-bottom: 25px; border-radius: 8px; overflow: hidden;">
-    <div id="tradingview_chart" style="height: 100%; width: 100%;"></div>
-    <script type="text/javascript" src="https://tradingview.com"></script>
-    <script type="text/javascript">
-    new TradingView.widget({
-        "width": "100%",
-        "height": "100%",
-        "symbol": "BINANCE:BTCUSDT",
-        "interval": "D",
-        "timezone": "Etc/UTC",
-        "theme": "dark",
-        "style": "1",
-        "locale": "ru",
-        "toolbar_bg": "#f1f3f6",
-        "enable_publishing": false,
-        "hide_side_toolbar": false,
-        "allow_symbol_change": true,
-        "container_id": "tradingview_chart"
-    });
-    </script>
-</div>
+        <div class="content-box">
+            <h2 style="color: #00ff66; margin-top: 0;">Графики и сигналы рынка</h2>
+            <p style="color: #8a99ad; font-size: 0.9rem; margin-bottom: 20px;">
+                Интерактивный технический анализ в реальном времени. Используйте вкладки внутри графика для переключения между парами.
+            </p>
+            
+            <!-- Фиксированный блок графика (Связка iframe) -->
+            <div style="height: 380px !important; min-height: 380px !important; width: 100%; margin-bottom: 25px; border-radius: 8px; overflow: hidden; background: #131722;">
+                <iframe src="https://tradingview.com" style="width: 100%; height: 100%; border: none;"></iframe>
+            </div>
 
-    <!-- Кнопка Назад -->
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="ai-tools.html" style="display: inline-block; padding: 10px 24px; color: #00ff66; border: 1px solid #00ff66; text-decoration: none; border-radius: 6px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);" onmouseover="this.style.background='#00ff66'; this.style.color='#0b0f19'; this.style.boxShadow='0 0 15px #00ff66'" onmouseout="this.style.background='transparent'; this.style.color='#00ff66'; this.style.boxShadow='0 0 10px rgba(0, 255, 102, 0.1)'">
-            ← Назад к AI Tools
-        </a>
+            <!-- Кнопка Назад, жестко стоящая строго ПОД графиком в самом низу рамки -->
+            <div style="text-align: center; width: 100%; margin-top: auto; padding-top: 10px;">
+                <a href="ai-tools.html" style="display: inline-block; padding: 10px 24px; color: #00ff66; border: 1px solid #00ff66; text-decoration: none; border-radius: 6px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);" onmouseover="this.style.background='#00ff66'; this.style.color='#0b0f19'; this.style.boxShadow='0 0 15px #00ff66'" onmouseout="this.style.background='transparent'; this.style.color='#00ff66'; this.style.boxShadow='0 0 10px rgba(0, 255,
+             102, 0.1)'">
+                    ← Назад к AI Tools
+                </a>
+            </div>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
