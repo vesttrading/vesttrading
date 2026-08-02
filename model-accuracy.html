@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Accuracy - VestTrading</title>
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #ffffff !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #00ff66 !important;
+            text-shadow: 0 0 10px #00ff66, 0 0 20px #00ff66 !important;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .green-text {
+            color: #00ff66 !important;
+        }
+        .content-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 170, 0, 0.3);
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <a href="index.html" class="logo">
+            <span style="color: #00ff66 !important;">Vest</span><span style="color: #ffffff !important;">Trading</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#academy">Academy</a>
+            <a href="forex.html">Forex</a>
+            <a href="crypto.html">Crypto</a>
+            <a href="ai-tools.html">AI Tools</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Model <span style="background: linear-gradient(90deg, #00ff66 0%, #ffaa00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Accuracy</span></h1>
+        <p>Метрики эффективности предсказательных моделей ИИ</p>
+        
+        <div class="content-box">
+            <h2 style="color: #ffaa00; margin-top: 0;">Статистика точности</h2>
+            
+            <div class="stat-row">
+                <span>Общая точность (Backtesting 30d):</span>
+                <span style="color: #ffaa00; font-weight: bold;">94.2%</span>
+            </div>
+            <div class="stat-row">
+                <span>Точность по BTC/USDT:</span>
+                <span style="color: #00ff66; font-weight: bold;">95.1%</span>
+            </div>
+            <div class="stat-row">
+                <span>Точность по Forex парам:</span>
+                <span style="color: #00ff66; font-weight: bold;">93.4%</span>
+            </div>
+            <div class="stat-row">
+                <span>Ложные сигналы (False Positive):</span>
+                <span style="color: #ff4444; font-weight: bold;">5.8%</span>
+            </div>
+
+            <!-- Кнопка Назад на уровень выше -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="predictive-analytics.html" style="display: inline-block; padding: 10px 24px; color: #ffaa00; border: 1px solid #ffaa00; text-decoration: none; border-radius: 6px; font-weight: bold; transition: all 0.3s ease;" onmouseover="this.style.background='#ffaa00'; this.style.color='#0b0f19';"
+                onmouseout="this.style.background='transparent'; this.style.color='#ffaa00';">
+                    ← Назад к прогнозу
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
