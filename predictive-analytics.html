@@ -88,10 +88,28 @@
         Интерактивный технический анализ в реальном времени. Используйте вкладки внутри графика для переключения между парами.
     </p>
     
-    <!-- Виджет графика TradingView -->
-    <div style="height: 450px; width: 100%; margin-bottom: 25px;">
-        <iframe src="https://tradingview.com" style="width: 100%; height: 100%; border: none; border-radius: 8px;"></iframe>
-    </div>
+  <!-- Виджет графика TradingView -->
+<div style="height: 450px; width: 100%; margin-bottom: 25px; border-radius: 8px; overflow: hidden;">
+    <div id="tradingview_chart" style="height: 100%; width: 100%;"></div>
+    <script type="text/javascript" src="https://tradingview.com"></script>
+    <script type="text/javascript">
+    new TradingView.widget({
+        "width": "100%",
+        "height": "100%",
+        "symbol": "BINANCE:BTCUSDT",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "dark",
+        "style": "1",
+        "locale": "ru",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "hide_side_toolbar": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_chart"
+    });
+    </script>
+</div>
 
     <!-- Кнопка Назад -->
     <div style="text-align: center; margin-top: 20px;">
